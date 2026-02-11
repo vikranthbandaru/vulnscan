@@ -37,7 +37,7 @@ A **production-ready**, vulnerability scanner built in Python. Discovers hosts, 
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/vulnscan.git
+git clone https://github.com/vikranthbandaru/vulnscan.git
 cd vulnscan
 
 # Install dependencies
