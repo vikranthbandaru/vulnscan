@@ -60,8 +60,7 @@ vulnscan -t scanme.nmap.org --confirm-authorized --format all -o ./reports
 vulnscan -t 10.0.0.0/24 -p top1000 --cvss-threshold 7.0 --confirm-authorized
 
 # Multiple targets with NVD API key for faster lookups
-vulnscan -t 192.168.1.1 example.com -p 22,80,443 \
-    --nvd-api-key YOUR_KEY --confirm-authorized
+vulnscan -t 192.168.1.1 example.com -p 22,80,443 nvd-api-key YOUR_KEY --confirm-authorized
 
 # Verbose mode
 vulnscan -t 127.0.0.1 --confirm-authorized -v
