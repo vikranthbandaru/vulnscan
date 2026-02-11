@@ -1,0 +1,2088 @@
+{
+  "metadata": {
+    "scanner_version": "1.0.0",
+    "scan_start": "2026-02-11T18:44:26.606707",
+    "scan_end": "",
+    "targets_requested": [
+      "192.168.1.1",
+      "example.com"
+    ],
+    "ports_scanned": "22,80,443",
+    "cvss_threshold": 4.0,
+    "nmap_version": "",
+    "authorization_confirmed": true
+  },
+  "summary": {
+    "total_hosts": 2,
+    "hosts_up": 2,
+    "total_ports_open": 4,
+    "total_findings": 82,
+    "critical_count": 12,
+    "high_count": 17,
+    "medium_count": 39,
+    "low_count": 13,
+    "info_count": 1,
+    "overall_risk_score": 5.8
+  },
+  "hosts": [
+    {
+      "ip": "192.168.1.1",
+      "hostname": "",
+      "status": "up",
+      "response_time_ms": 210.0,
+      "os_guess": "",
+      "ports": [
+        {
+          "port": 22,
+          "protocol": "tcp",
+          "state": "filtered",
+          "service": "ssh",
+          "version": "",
+          "banner": "",
+          "cpe": ""
+        },
+        {
+          "port": 80,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "http",
+          "version": "1.4.59",
+          "banner": "",
+          "cpe": "cpe:/a:lighttpd:lighttpd:1.4.59"
+        },
+        {
+          "port": 443,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "http",
+          "version": "1.4.59",
+          "banner": "",
+          "cpe": "cpe:/a:lighttpd:lighttpd:1.4.59"
+        }
+      ],
+      "findings": [
+        {
+          "id": "CVE-1999-0013",
+          "title": "CVE-1999-0013 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0013",
+            "cvss_score": 8.4,
+            "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "severity": "High",
+            "description": "Stolen credentials from SSH clients via ssh-agent program, allowing other local users to access remote accounts belonging to the ssh-agent user.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013"
+            ],
+            "exploit_available": false,
+            "published": "1998-01-22T05:00:00.000"
+          },
+          "description": "Stolen credentials from SSH clients via ssh-agent program, allowing other local users to access remote accounts belonging to the ssh-agent user.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0013.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.254955"
+        },
+        {
+          "id": "CVE-1999-1085",
+          "title": "CVE-1999-1085 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1085",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+            "severity": "Medium",
+            "description": "SSH 1.2.25, 1.2.23, and other versions, when used in in CBC (Cipher Block Chaining) or CFB (Cipher Feedback 64 bits) modes, allows remote attackers to insert arbitrary data into an existing stream between an SSH client and server by using a known plaintext attack and computing a valid CRC-32 checksum for the packet, aka the \"SSH insertion attack.\"",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=90221103125884&w=2",
+              "http://marc.info/?l=bugtraq&m=90221104525878&w=2",
+              "http://www.iss.net/security_center/static/1126.php",
+              "http://www.kb.cert.org/vuls/id/13877",
+              "http://marc.info/?l=bugtraq&m=90221103125884&w=2"
+            ],
+            "exploit_available": false,
+            "published": "1998-06-12T04:00:00.000"
+          },
+          "description": "SSH 1.2.25, 1.2.23, and other versions, when used in in CBC (Cipher Block Chaining) or CFB (Cipher Feedback 64 bits) modes, allows remote attackers to insert arbitrary data into an existing stream between an SSH client and server by using a known plaintext attack and computing a valid CRC-32 checksum for the packet, aka the \"SSH insertion attack.\"",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1085.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=90221103125884&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.254994"
+        },
+        {
+          "id": "CVE-1999-0310",
+          "title": "CVE-1999-0310 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0310",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "SSH 1.2.25 on HP-UX allows access to new user accounts.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310"
+            ],
+            "exploit_available": false,
+            "published": "1998-09-01T04:00:00.000"
+          },
+          "description": "SSH 1.2.25 on HP-UX allows access to new user accounts.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0310.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255009"
+        },
+        {
+          "id": "CVE-1999-1321",
+          "title": "CVE-1999-1321 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1321",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Buffer overflow in ssh 1.2.26 client with Kerberos V enabled could allow remote attackers to cause a denial of service or execute arbitrary commands via a long DNS hostname that is not properly handled during TGT ticket passing.",
+            "references": [
+              "http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814",
+              "http://www.osvdb.org/4883",
+              "http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814",
+              "http://www.osvdb.org/4883"
+            ],
+            "exploit_available": false,
+            "published": "1998-11-05T05:00:00.000"
+          },
+          "description": "Buffer overflow in ssh 1.2.26 client with Kerberos V enabled could allow remote attackers to cause a denial of service or execute arbitrary commands via a long DNS hostname that is not properly handled during TGT ticket passing.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1321.\n\u2022 Reference: http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255019"
+        },
+        {
+          "id": "CVE-1999-1159",
+          "title": "CVE-1999-1159 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1159",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "SSH 2.0.11 and earlier allows local users to request remote forwarding from privileged ports without being root.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=91495920911490&w=2",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/1471",
+              "http://marc.info/?l=bugtraq&m=91495920911490&w=2",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/1471"
+            ],
+            "exploit_available": false,
+            "published": "1998-12-29T05:00:00.000"
+          },
+          "description": "SSH 2.0.11 and earlier allows local users to request remote forwarding from privileged ports without being root.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1159.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=91495920911490&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255029"
+        },
+        {
+          "id": "CVE-1999-0248",
+          "title": "CVE-1999-0248 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0248",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "A race condition in the authentication agent mechanism of sshd 1.2.17 allows an attacker to steal another user's credentials.",
+            "references": [
+              "http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html",
+              "http://www.uni-karlsruhe.de/~ig25/ssh-faq/ssh-faq-6.html#ss6.1",
+              "http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html",
+              "http://www.uni-karlsruhe.de/~ig25/ssh-faq/ssh-faq-6.html#ss6.1"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "A race condition in the authentication agent mechanism of sshd 1.2.17 allows an attacker to steal another user's credentials.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0248.\n\u2022 Reference: http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255038"
+        },
+        {
+          "id": "CVE-1999-0398",
+          "title": "CVE-1999-0398 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0398",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "In some instances of SSH 1.2.27 and 2.0.11 on Linux systems, SSH will allow users with expired accounts to login.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "In some instances of SSH 1.2.27 and 2.0.11 on Linux systems, SSH will allow users with expired accounts to login.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0398.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255051"
+        },
+        {
+          "id": "CVE-1999-0547",
+          "title": "CVE-1999-0547 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0547",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "An SSH server allows authentication through the .rhosts file.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/315",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/315"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "An SSH server allows authentication through the .rhosts file.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0547.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/315\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255060"
+        },
+        {
+          "id": "CVE-1999-1029",
+          "title": "CVE-1999-1029 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1029",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "SSH server (sshd2) before 2.0.12 does not properly record login attempts if the connection is closed before the maximum number of tries, allowing a remote attacker to guess the password without showing up in the audit logs.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=92663402004280&w=2",
+              "http://www.securityfocus.com/bid/277",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2193",
+              "http://marc.info/?l=bugtraq&m=92663402004280&w=2",
+              "http://www.securityfocus.com/bid/277"
+            ],
+            "exploit_available": false,
+            "published": "1999-05-13T04:00:00.000"
+          },
+          "description": "SSH server (sshd2) before 2.0.12 does not properly record login attempts if the connection is closed before the maximum number of tries, allowing a remote attacker to guess the password without showing up in the audit logs.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1029.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=92663402004280&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255069"
+        },
+        {
+          "id": "CVE-1999-1231",
+          "title": "CVE-1999-1231 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1231",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "ssh 2.0.12, and possibly other versions, allows valid user names to attempt to enter the correct password multiple times, but only prompts an invalid user name for a password once, which allows remote attackers to determine user account names on the server.",
+            "references": [
+              "http://www.securityfocus.com/archive/1/14758",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2276",
+              "http://www.securityfocus.com/archive/1/14758",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2276"
+            ],
+            "exploit_available": false,
+            "published": "1999-06-09T04:00:00.000"
+          },
+          "description": "ssh 2.0.12, and possibly other versions, allows valid user names to attempt to enter the correct password multiple times, but only prompts an invalid user name for a password once, which allows remote attackers to determine user account names on the server.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1231.\n\u2022 Reference: http://www.securityfocus.com/archive/1/14758\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255078"
+        },
+        {
+          "id": "CVE-2000-0143",
+          "title": "CVE-2000-0143 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0143",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "The SSH protocol server sshd allows local users without shell access to redirect a TCP connection through a service that uses the standard system password database for authentication, such as POP or FTP.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143"
+            ],
+            "exploit_available": false,
+            "published": "2000-02-11T05:00:00.000"
+          },
+          "description": "The SSH protocol server sshd allows local users without shell access to redirect a TCP connection through a service that uses the standard system password database for authentication, such as POP or FTP.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0143.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255086"
+        },
+        {
+          "id": "CVE-2000-0217",
+          "title": "CVE-2000-0217 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0217",
+            "cvss_score": 5.1,
+            "cvss_vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "The default configuration of SSH allows X forwarding, which could allow a remote attacker to control a client's X sessions via a malicious xauth program.",
+            "references": [
+              "http://www.securityfocus.com/bid/1006",
+              "http://www.securityfocus.com/bid/1006"
+            ],
+            "exploit_available": false,
+            "published": "2000-02-24T05:00:00.000"
+          },
+          "description": "The default configuration of SSH allows X forwarding, which could allow a remote attacker to control a client's X sessions via a malicious xauth program.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0217.\n\u2022 Reference: http://www.securityfocus.com/bid/1006\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255095"
+        },
+        {
+          "id": "CVE-2000-0532",
+          "title": "CVE-2000-0532 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0532",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "A FreeBSD patch for SSH on 2000-01-14 configures ssh to listen on port 722 as well as port 22, which might allow remote attackers to access SSH through port 722 even if port 22 is otherwise filtered.",
+            "references": [
+              "http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html",
+              "http://www.osvdb.org/1387",
+              "http://www.securityfocus.com/bid/1323",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4638",
+              "http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html"
+            ],
+            "exploit_available": false,
+            "published": "2000-06-07T04:00:00.000"
+          },
+          "description": "A FreeBSD patch for SSH on 2000-01-14 configures ssh to listen on port 722 as well as port 22, which might allow remote attackers to access SSH through port 722 even if port 22 is otherwise filtered.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0532.\n\u2022 Reference: http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255103"
+        },
+        {
+          "id": "CVE-2000-0525",
+          "title": "CVE-2000-0525 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0525",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "OpenSSH does not properly drop privileges when the UseLogin option is enabled, which allows local users to execute arbitrary commands by providing the command to the ssh daemon.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-06/0065.html",
+              "http://www.openbsd.org/errata.html#uselogin",
+              "http://www.osvdb.org/341",
+              "http://www.securityfocus.com/bid/1334",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4646"
+            ],
+            "exploit_available": false,
+            "published": "2000-06-08T04:00:00.000"
+          },
+          "description": "OpenSSH does not properly drop privileges when the UseLogin option is enabled, which allows local users to execute arbitrary commands by providing the command to the ssh daemon.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0525.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-06/0065.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255114"
+        },
+        {
+          "id": "CVE-2000-0575",
+          "title": "CVE-2000-0575 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0575",
+            "cvss_score": 7.2,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "High",
+            "description": "SSH 1.2.27 with Kerberos authentication support stores Kerberos tickets in a file which is created in the current directory of the user who is logging in, which could allow remote attackers to sniff the ticket cache if the home directory is installed on NFS.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=96256265914116&w=2",
+              "http://www.securityfocus.com/bid/1426",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4903",
+              "http://marc.info/?l=bugtraq&m=96256265914116&w=2",
+              "http://www.securityfocus.com/bid/1426"
+            ],
+            "exploit_available": false,
+            "published": "2000-07-05T04:00:00.000"
+          },
+          "description": "SSH 1.2.27 with Kerberos authentication support stores Kerberos tickets in a file which is created in the current directory of the user who is logging in, which could allow remote attackers to sniff the ticket cache if the home directory is installed on NFS.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0575.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=96256265914116&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255123"
+        },
+        {
+          "id": "CVE-2000-0784",
+          "title": "CVE-2000-0784 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0784",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "sshd program in the Rapidstream 2.1 Beta VPN appliance has a hard-coded \"rsadmin\" account with a null password, which allows remote attackers to execute arbitrary commands via ssh.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html",
+              "http://www.securityfocus.com/bid/1574",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html",
+              "http://www.securityfocus.com/bid/1574"
+            ],
+            "exploit_available": false,
+            "published": "2000-10-20T04:00:00.000"
+          },
+          "description": "sshd program in the Rapidstream 2.1 Beta VPN appliance has a hard-coded \"rsadmin\" account with a null password, which allows remote attackers to execute arbitrary commands via ssh.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0784.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255131"
+        },
+        {
+          "id": "CVE-2000-0999",
+          "title": "CVE-2000-0999 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0999",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "Format string vulnerabilities in OpenBSD ssh program (and possibly other BSD-based operating systems) allow attackers to gain root privileges.",
+            "references": [
+              "ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch",
+              "ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch"
+            ],
+            "exploit_available": false,
+            "published": "2000-12-11T05:00:00.000"
+          },
+          "description": "Format string vulnerabilities in OpenBSD ssh program (and possibly other BSD-based operating systems) allow attackers to gain root privileges.",
+          "evidence": "Detected ssh  on 192.168.1.1:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0999.\n\u2022 Reference: ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:56.255140"
+        },
+        {
+          "id": "HDR-MISSING-STRICT_TRANSPORT_SECURITY",
+          "title": "Missing Security Header: Strict-Transport-Security",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Strict-Transport-Security header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Strict-Transport-Security header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985429"
+        },
+        {
+          "id": "HDR-MISSING-CONTENT_SECURITY_POLICY",
+          "title": "Missing Security Header: Content-Security-Policy",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Content-Security-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Content-Security-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985487"
+        },
+        {
+          "id": "HDR-MISSING-X_FRAME_OPTIONS",
+          "title": "Missing Security Header: X-Frame-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Frame-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Frame-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985518"
+        },
+        {
+          "id": "HDR-MISSING-X_CONTENT_TYPE_OPTIONS",
+          "title": "Missing Security Header: X-Content-Type-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Content-Type-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Content-Type-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985555"
+        },
+        {
+          "id": "HDR-MISSING-REFERRER_POLICY",
+          "title": "Missing Security Header: Referrer-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Referrer-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Referrer-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985583"
+        },
+        {
+          "id": "HDR-MISSING-PERMISSIONS_POLICY",
+          "title": "Missing Security Header: Permissions-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Permissions-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:00 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Permissions-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:58.985609"
+        },
+        {
+          "id": "HDR-LEAK-SERVER",
+          "title": "Information Disclosure: Server",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The Server header reveals server technology information: lighttpd/1.4.59",
+          "evidence": "Server: lighttpd/1.4.59",
+          "remediation": "Remove or suppress the Server header to reduce information leakage.",
+          "timestamp": "2026-02-11T18:44:58.985623"
+        },
+        {
+          "id": "TLS-OK-TLSv1.3",
+          "title": "TLS Protocol: TLSv1.3",
+          "severity": "Info",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": null,
+          "description": "Server uses TLSv1.3.",
+          "evidence": "Protocol: TLSv1.3",
+          "remediation": "No action required.",
+          "timestamp": "2026-02-11T18:44:59.672075"
+        },
+        {
+          "id": "HDR-MISSING-STRICT_TRANSPORT_SECURITY",
+          "title": "Missing Security Header: Strict-Transport-Security",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Strict-Transport-Security header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Strict-Transport-Security header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.974940"
+        },
+        {
+          "id": "HDR-MISSING-CONTENT_SECURITY_POLICY",
+          "title": "Missing Security Header: Content-Security-Policy",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Content-Security-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Content-Security-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.974991"
+        },
+        {
+          "id": "HDR-MISSING-X_FRAME_OPTIONS",
+          "title": "Missing Security Header: X-Frame-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Frame-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Frame-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.975018"
+        },
+        {
+          "id": "HDR-MISSING-X_CONTENT_TYPE_OPTIONS",
+          "title": "Missing Security Header: X-Content-Type-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Content-Type-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Content-Type-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.975041"
+        },
+        {
+          "id": "HDR-MISSING-REFERRER_POLICY",
+          "title": "Missing Security Header: Referrer-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Referrer-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Referrer-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.975062"
+        },
+        {
+          "id": "HDR-MISSING-PERMISSIONS_POLICY",
+          "title": "Missing Security Header: Permissions-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Permissions-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Permissions-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:44:59.975081"
+        },
+        {
+          "id": "HDR-LEAK-SERVER",
+          "title": "Information Disclosure: Server",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The Server header reveals server technology information: lighttpd/1.4.59",
+          "evidence": "Server: lighttpd/1.4.59",
+          "remediation": "Remove or suppress the Server header to reduce information leakage.",
+          "timestamp": "2026-02-11T18:44:59.975094"
+        }
+      ]
+    },
+    {
+      "ip": "104.18.27.120",
+      "hostname": "example.com",
+      "status": "up",
+      "response_time_ms": 690.0,
+      "os_guess": "",
+      "ports": [
+        {
+          "port": 22,
+          "protocol": "tcp",
+          "state": "filtered",
+          "service": "ssh",
+          "version": "",
+          "banner": "",
+          "cpe": ""
+        },
+        {
+          "port": 80,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "http",
+          "version": "Cloudflare http proxy",
+          "banner": "",
+          "cpe": ""
+        },
+        {
+          "port": 443,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "https",
+          "version": "",
+          "banner": "",
+          "cpe": ""
+        }
+      ],
+      "findings": [
+        {
+          "id": "CVE-1999-0013",
+          "title": "CVE-1999-0013 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0013",
+            "cvss_score": 8.4,
+            "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "severity": "High",
+            "description": "Stolen credentials from SSH clients via ssh-agent program, allowing other local users to access remote accounts belonging to the ssh-agent user.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013"
+            ],
+            "exploit_available": false,
+            "published": "1998-01-22T05:00:00.000"
+          },
+          "description": "Stolen credentials from SSH clients via ssh-agent program, allowing other local users to access remote accounts belonging to the ssh-agent user.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0013.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0013\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705222"
+        },
+        {
+          "id": "CVE-1999-1085",
+          "title": "CVE-1999-1085 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1085",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+            "severity": "Medium",
+            "description": "SSH 1.2.25, 1.2.23, and other versions, when used in in CBC (Cipher Block Chaining) or CFB (Cipher Feedback 64 bits) modes, allows remote attackers to insert arbitrary data into an existing stream between an SSH client and server by using a known plaintext attack and computing a valid CRC-32 checksum for the packet, aka the \"SSH insertion attack.\"",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=90221103125884&w=2",
+              "http://marc.info/?l=bugtraq&m=90221104525878&w=2",
+              "http://www.iss.net/security_center/static/1126.php",
+              "http://www.kb.cert.org/vuls/id/13877",
+              "http://marc.info/?l=bugtraq&m=90221103125884&w=2"
+            ],
+            "exploit_available": false,
+            "published": "1998-06-12T04:00:00.000"
+          },
+          "description": "SSH 1.2.25, 1.2.23, and other versions, when used in in CBC (Cipher Block Chaining) or CFB (Cipher Feedback 64 bits) modes, allows remote attackers to insert arbitrary data into an existing stream between an SSH client and server by using a known plaintext attack and computing a valid CRC-32 checksum for the packet, aka the \"SSH insertion attack.\"",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1085.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=90221103125884&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705267"
+        },
+        {
+          "id": "CVE-1999-0310",
+          "title": "CVE-1999-0310 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0310",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "SSH 1.2.25 on HP-UX allows access to new user accounts.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310"
+            ],
+            "exploit_available": false,
+            "published": "1998-09-01T04:00:00.000"
+          },
+          "description": "SSH 1.2.25 on HP-UX allows access to new user accounts.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0310.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0310\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705288"
+        },
+        {
+          "id": "CVE-1999-1321",
+          "title": "CVE-1999-1321 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1321",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Buffer overflow in ssh 1.2.26 client with Kerberos V enabled could allow remote attackers to cause a denial of service or execute arbitrary commands via a long DNS hostname that is not properly handled during TGT ticket passing.",
+            "references": [
+              "http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814",
+              "http://www.osvdb.org/4883",
+              "http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814",
+              "http://www.osvdb.org/4883"
+            ],
+            "exploit_available": false,
+            "published": "1998-11-05T05:00:00.000"
+          },
+          "description": "Buffer overflow in ssh 1.2.26 client with Kerberos V enabled could allow remote attackers to cause a denial of service or execute arbitrary commands via a long DNS hostname that is not properly handled during TGT ticket passing.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1321.\n\u2022 Reference: http://lists.netspace.org/cgi-bin/wa?A2=ind9811A&L=bugtraq&P=R4814\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705304"
+        },
+        {
+          "id": "CVE-1999-1159",
+          "title": "CVE-1999-1159 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1159",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "SSH 2.0.11 and earlier allows local users to request remote forwarding from privileged ports without being root.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=91495920911490&w=2",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/1471",
+              "http://marc.info/?l=bugtraq&m=91495920911490&w=2",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/1471"
+            ],
+            "exploit_available": false,
+            "published": "1998-12-29T05:00:00.000"
+          },
+          "description": "SSH 2.0.11 and earlier allows local users to request remote forwarding from privileged ports without being root.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1159.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=91495920911490&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705319"
+        },
+        {
+          "id": "CVE-1999-0248",
+          "title": "CVE-1999-0248 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0248",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "A race condition in the authentication agent mechanism of sshd 1.2.17 allows an attacker to steal another user's credentials.",
+            "references": [
+              "http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html",
+              "http://www.uni-karlsruhe.de/~ig25/ssh-faq/ssh-faq-6.html#ss6.1",
+              "http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html",
+              "http://www.uni-karlsruhe.de/~ig25/ssh-faq/ssh-faq-6.html#ss6.1"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "A race condition in the authentication agent mechanism of sshd 1.2.17 allows an attacker to steal another user's credentials.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0248.\n\u2022 Reference: http://oliver.efri.hr/~crv/security/bugs/mUNIXes/ssh2.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705335"
+        },
+        {
+          "id": "CVE-1999-0398",
+          "title": "CVE-1999-0398 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0398",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "In some instances of SSH 1.2.27 and 2.0.11 on Linux systems, SSH will allow users with expired accounts to login.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "In some instances of SSH 1.2.27 and 2.0.11 on Linux systems, SSH will allow users with expired accounts to login.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0398.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-1999-0398\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705352"
+        },
+        {
+          "id": "CVE-1999-0547",
+          "title": "CVE-1999-0547 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-0547",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "An SSH server allows authentication through the .rhosts file.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/315",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/315"
+            ],
+            "exploit_available": false,
+            "published": "1999-01-01T05:00:00.000"
+          },
+          "description": "An SSH server allows authentication through the .rhosts file.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-0547.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/315\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705367"
+        },
+        {
+          "id": "CVE-1999-1029",
+          "title": "CVE-1999-1029 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1029",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "SSH server (sshd2) before 2.0.12 does not properly record login attempts if the connection is closed before the maximum number of tries, allowing a remote attacker to guess the password without showing up in the audit logs.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=92663402004280&w=2",
+              "http://www.securityfocus.com/bid/277",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2193",
+              "http://marc.info/?l=bugtraq&m=92663402004280&w=2",
+              "http://www.securityfocus.com/bid/277"
+            ],
+            "exploit_available": false,
+            "published": "1999-05-13T04:00:00.000"
+          },
+          "description": "SSH server (sshd2) before 2.0.12 does not properly record login attempts if the connection is closed before the maximum number of tries, allowing a remote attacker to guess the password without showing up in the audit logs.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1029.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=92663402004280&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705382"
+        },
+        {
+          "id": "CVE-1999-1231",
+          "title": "CVE-1999-1231 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1231",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "ssh 2.0.12, and possibly other versions, allows valid user names to attempt to enter the correct password multiple times, but only prompts an invalid user name for a password once, which allows remote attackers to determine user account names on the server.",
+            "references": [
+              "http://www.securityfocus.com/archive/1/14758",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2276",
+              "http://www.securityfocus.com/archive/1/14758",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2276"
+            ],
+            "exploit_available": false,
+            "published": "1999-06-09T04:00:00.000"
+          },
+          "description": "ssh 2.0.12, and possibly other versions, allows valid user names to attempt to enter the correct password multiple times, but only prompts an invalid user name for a password once, which allows remote attackers to determine user account names on the server.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1231.\n\u2022 Reference: http://www.securityfocus.com/archive/1/14758\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705398"
+        },
+        {
+          "id": "CVE-2000-0143",
+          "title": "CVE-2000-0143 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0143",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "The SSH protocol server sshd allows local users without shell access to redirect a TCP connection through a service that uses the standard system password database for authentication, such as POP or FTP.",
+            "references": [
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143"
+            ],
+            "exploit_available": false,
+            "published": "2000-02-11T05:00:00.000"
+          },
+          "description": "The SSH protocol server sshd allows local users without shell access to redirect a TCP connection through a service that uses the standard system password database for authentication, such as POP or FTP.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0143.\n\u2022 Reference: https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2000-0143\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705411"
+        },
+        {
+          "id": "CVE-2000-0217",
+          "title": "CVE-2000-0217 \u2014 ssh vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0217",
+            "cvss_score": 5.1,
+            "cvss_vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "The default configuration of SSH allows X forwarding, which could allow a remote attacker to control a client's X sessions via a malicious xauth program.",
+            "references": [
+              "http://www.securityfocus.com/bid/1006",
+              "http://www.securityfocus.com/bid/1006"
+            ],
+            "exploit_available": false,
+            "published": "2000-02-24T05:00:00.000"
+          },
+          "description": "The default configuration of SSH allows X forwarding, which could allow a remote attacker to control a client's X sessions via a malicious xauth program.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0217.\n\u2022 Reference: http://www.securityfocus.com/bid/1006\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705424"
+        },
+        {
+          "id": "CVE-2000-0532",
+          "title": "CVE-2000-0532 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0532",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "A FreeBSD patch for SSH on 2000-01-14 configures ssh to listen on port 722 as well as port 22, which might allow remote attackers to access SSH through port 722 even if port 22 is otherwise filtered.",
+            "references": [
+              "http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html",
+              "http://www.osvdb.org/1387",
+              "http://www.securityfocus.com/bid/1323",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4638",
+              "http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html"
+            ],
+            "exploit_available": false,
+            "published": "2000-06-07T04:00:00.000"
+          },
+          "description": "A FreeBSD patch for SSH on 2000-01-14 configures ssh to listen on port 722 as well as port 22, which might allow remote attackers to access SSH through port 722 even if port 22 is otherwise filtered.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0532.\n\u2022 Reference: http://archives.neohapsis.com/archives/freebsd/2000-06/0031.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705437"
+        },
+        {
+          "id": "CVE-2000-0525",
+          "title": "CVE-2000-0525 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0525",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "OpenSSH does not properly drop privileges when the UseLogin option is enabled, which allows local users to execute arbitrary commands by providing the command to the ssh daemon.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-06/0065.html",
+              "http://www.openbsd.org/errata.html#uselogin",
+              "http://www.osvdb.org/341",
+              "http://www.securityfocus.com/bid/1334",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4646"
+            ],
+            "exploit_available": false,
+            "published": "2000-06-08T04:00:00.000"
+          },
+          "description": "OpenSSH does not properly drop privileges when the UseLogin option is enabled, which allows local users to execute arbitrary commands by providing the command to the ssh daemon.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0525.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-06/0065.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705454"
+        },
+        {
+          "id": "CVE-2000-0575",
+          "title": "CVE-2000-0575 \u2014 ssh vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0575",
+            "cvss_score": 7.2,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "High",
+            "description": "SSH 1.2.27 with Kerberos authentication support stores Kerberos tickets in a file which is created in the current directory of the user who is logging in, which could allow remote attackers to sniff the ticket cache if the home directory is installed on NFS.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=96256265914116&w=2",
+              "http://www.securityfocus.com/bid/1426",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4903",
+              "http://marc.info/?l=bugtraq&m=96256265914116&w=2",
+              "http://www.securityfocus.com/bid/1426"
+            ],
+            "exploit_available": false,
+            "published": "2000-07-05T04:00:00.000"
+          },
+          "description": "SSH 1.2.27 with Kerberos authentication support stores Kerberos tickets in a file which is created in the current directory of the user who is logging in, which could allow remote attackers to sniff the ticket cache if the home directory is installed on NFS.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0575.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=96256265914116&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705468"
+        },
+        {
+          "id": "CVE-2000-0784",
+          "title": "CVE-2000-0784 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0784",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "sshd program in the Rapidstream 2.1 Beta VPN appliance has a hard-coded \"rsadmin\" account with a null password, which allows remote attackers to execute arbitrary commands via ssh.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html",
+              "http://www.securityfocus.com/bid/1574",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html",
+              "http://www.securityfocus.com/bid/1574"
+            ],
+            "exploit_available": false,
+            "published": "2000-10-20T04:00:00.000"
+          },
+          "description": "sshd program in the Rapidstream 2.1 Beta VPN appliance has a hard-coded \"rsadmin\" account with a null password, which allows remote attackers to execute arbitrary commands via ssh.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0784.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-08/0216.html\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705481"
+        },
+        {
+          "id": "CVE-2000-0999",
+          "title": "CVE-2000-0999 \u2014 ssh vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 22,
+          "service": "ssh",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0999",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "Format string vulnerabilities in OpenBSD ssh program (and possibly other BSD-based operating systems) allow attackers to gain root privileges.",
+            "references": [
+              "ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch",
+              "ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch"
+            ],
+            "exploit_available": false,
+            "published": "2000-12-11T05:00:00.000"
+          },
+          "description": "Format string vulnerabilities in OpenBSD ssh program (and possibly other BSD-based operating systems) allow attackers to gain root privileges.",
+          "evidence": "Detected ssh  on 104.18.27.120:22 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update ssh to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0999.\n\u2022 Reference: ftp://ftp.openbsd.org/pub/OpenBSD/patches/2.7/common/028_format_strings.patch\n\u2022 If update is not immediately possible, consider restricting access to port 22 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:57.705495"
+        },
+        {
+          "id": "CVE-2023-2512",
+          "title": "CVE-2023-2512 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2023-2512",
+            "cvss_score": 6.5,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:H",
+            "severity": "Medium",
+            "description": "Prior to version v1.20230419.0, the FormData API implementation was subject to an integer overflow. If a FormData instance contained more than 2^31 elements, the forEach()\u00a0method could end up reading from the wrong location in memory while iterating over elements. This would most likely lead to a segmentation fault, but could theoretically allow arbitrary undefined behavior.\n\n\nIn order for the bug to be exploitable, the process would need to be able to allocate 160GB of RAM. Due to this, the bug",
+            "references": [
+              "https://github.com/cloudflare/workerd/releases/tag/v1.20230419.0",
+              "https://github.com/cloudflare/workerd/security/advisories/GHSA-8vx6-69vg-c46f",
+              "https://github.com/cloudflare/workerd/releases/tag/v1.20230419.0",
+              "https://github.com/cloudflare/workerd/security/advisories/GHSA-8vx6-69vg-c46f"
+            ],
+            "exploit_available": false,
+            "published": "2023-05-12T11:15:13.033"
+          },
+          "description": "Prior to version v1.20230419.0, the FormData API implementation was subject to an integer overflow. If a FormData instance contained more than 2^31 elements, the forEach()\u00a0method could end up reading from the wrong location in memory while iterating over elements. This would most likely lead to a segmentation fault, but could theoretically allow arbitrary undefined behavior.\n\n\nIn order for the bug to be exploitable, the process would need to be able to allocate 160GB of RAM. Due to this, the bug",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2023-2512.\n\u2022 Reference: https://github.com/cloudflare/workerd/releases/tag/v1.20230419.0\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192414"
+        },
+        {
+          "id": "CVE-2023-48230",
+          "title": "CVE-2023-48230 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2023-48230",
+            "cvss_score": 5.9,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+            "severity": "Medium",
+            "description": "Cap'n Proto is a data interchange format and capability-based RPC system. In versions 1.0 and 1.0.1, when using the KJ HTTP library with WebSocket compression enabled, a buffer underrun can be caused by a remote peer. The underrun always writes a constant value that is not attacker-controlled, likely resulting in a crash, enabling a remote denial-of-service attack. Most Cap'n Proto and KJ users are unlikely to have this functionality enabled and so unlikely to be affected. Maintainers suspect on",
+            "references": [
+              "https://github.com/capnproto/capnproto/commit/75c5c1499aa6e7690b741204ff9af91cce526c59",
+              "https://github.com/capnproto/capnproto/commit/e7f22da9c01286a2b0e1e5fbdf3ec9ab3aa128ff",
+              "https://github.com/capnproto/capnproto/security/advisories/GHSA-r89h-f468-62w3",
+              "https://github.com/capnproto/capnproto/commit/75c5c1499aa6e7690b741204ff9af91cce526c59",
+              "https://github.com/capnproto/capnproto/commit/e7f22da9c01286a2b0e1e5fbdf3ec9ab3aa128ff"
+            ],
+            "exploit_available": false,
+            "published": "2023-11-21T21:15:08.683"
+          },
+          "description": "Cap'n Proto is a data interchange format and capability-based RPC system. In versions 1.0 and 1.0.1, when using the KJ HTTP library with WebSocket compression enabled, a buffer underrun can be caused by a remote peer. The underrun always writes a constant value that is not attacker-controlled, likely resulting in a crash, enabling a remote denial-of-service attack. Most Cap'n Proto and KJ users are unlikely to have this functionality enabled and so unlikely to be affected. Maintainers suspect on",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2023-48230.\n\u2022 Reference: https://github.com/capnproto/capnproto/commit/75c5c1499aa6e7690b741204ff9af91cce526c59\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192630"
+        },
+        {
+          "id": "CVE-2023-6992",
+          "title": "CVE-2023-6992 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2023-6992",
+            "cvss_score": 4.0,
+            "cvss_vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:L/A:L",
+            "severity": "Medium",
+            "description": "Cloudflare version of zlib library was found to be vulnerable to memory corruption issues affecting the deflation algorithm implementation (deflate.c). The issues resulted from improper input validation and heap-based buffer overflow.\nA local attacker could exploit the problem during compression using a crafted malicious file potentially leading to denial of service of the software.\nPatches: The issue has been patched in commit  8352d10 https://github.com/cloudflare/zlib/commit/8352d108c05db1bdc",
+            "references": [
+              "https://github.com/cloudflare/zlib",
+              "https://github.com/cloudflare/zlib/security/advisories/GHSA-vww9-j87r-4cqh",
+              "https://github.com/cloudflare/zlib",
+              "https://github.com/cloudflare/zlib/security/advisories/GHSA-vww9-j87r-4cqh"
+            ],
+            "exploit_available": false,
+            "published": "2024-01-04T12:15:23.690"
+          },
+          "description": "Cloudflare version of zlib library was found to be vulnerable to memory corruption issues affecting the deflation algorithm implementation (deflate.c). The issues resulted from improper input validation and heap-based buffer overflow.\nA local attacker could exploit the problem during compression using a crafted malicious file potentially leading to denial of service of the software.\nPatches: The issue has been patched in commit  8352d10 https://github.com/cloudflare/zlib/commit/8352d108c05db1bdc",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2023-6992.\n\u2022 Reference: https://github.com/cloudflare/zlib\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192647"
+        },
+        {
+          "id": "CVE-2025-6087",
+          "title": "CVE-2025-6087 \u2014 http vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2025-6087",
+            "cvss_score": 9.1,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "severity": "Critical",
+            "description": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the @opennextjs/cloudflare package. The vulnerability stems from an unimplemented feature in the Cloudflare adapter for Open Next, which allowed unauthenticated users to proxy arbitrary remote content via the /_next/image endpoint.\n\nThis issue allowed attackers to load remote resources from arbitrary hosts under the victim site\u2019s domain for any site deployed using the Cloudflare adapter for Open Next.\u00a0\n\n\n\n\nFor example:\n\n https:",
+            "references": [
+              "https://github.com/opennextjs/opennextjs-cloudflare"
+            ],
+            "exploit_available": false,
+            "published": "2025-06-16T19:15:33.837"
+          },
+          "description": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the @opennextjs/cloudflare package. The vulnerability stems from an unimplemented feature in the Cloudflare adapter for Open Next, which allowed unauthenticated users to proxy arbitrary remote content via the /_next/image endpoint.\n\nThis issue allowed attackers to load remote resources from arbitrary hosts under the victim site\u2019s domain for any site deployed using the Cloudflare adapter for Open Next.\u00a0\n\n\n\n\nFor example:\n\n https:",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-6087.\n\u2022 Reference: https://github.com/opennextjs/opennextjs-cloudflare\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192662"
+        },
+        {
+          "id": "CVE-2025-7054",
+          "title": "CVE-2025-7054 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2025-7054",
+            "cvss_score": 6.5,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+            "severity": "Medium",
+            "description": "Cloudflare quiche was discovered to be vulnerable to an infinite loop when sending packets containing RETIRE_CONNECTION_ID frames.\n\nQUIC connections possess a set of connection identifiers (IDs); see  Section 5.1 of RFC 9000 https://datatracker.ietf.org/doc/html/rfc9000#section-5.1 . Once the QUIC handshake completes, a local endpoint is responsible for issuing and retiring Connection IDs that are used by the remote peer to populate the Destination Connection ID field in packets sent from remote",
+            "references": [
+              "https://github.com/cloudflare/quiche/security/advisories/GHSA-m3hh-f9gh-74c2"
+            ],
+            "exploit_available": false,
+            "published": "2025-08-07T16:15:31.460"
+          },
+          "description": "Cloudflare quiche was discovered to be vulnerable to an infinite loop when sending packets containing RETIRE_CONNECTION_ID frames.\n\nQUIC connections possess a set of connection identifiers (IDs); see  Section 5.1 of RFC 9000 https://datatracker.ietf.org/doc/html/rfc9000#section-5.1 . Once the QUIC handshake completes, a local endpoint is responsible for issuing and retiring Connection IDs that are used by the remote peer to populate the Destination Connection ID field in packets sent from remote",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-7054.\n\u2022 Reference: https://github.com/cloudflare/quiche/security/advisories/GHSA-m3hh-f9gh-74c2\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192674"
+        },
+        {
+          "id": "CVE-2025-54793",
+          "title": "CVE-2025-54793 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2025-54793",
+            "cvss_score": 6.1,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "severity": "Medium",
+            "description": "Astro is a web framework for content-driven websites. In versions 5.2.0 through 5.12.7, there is an Open Redirect vulnerability in the trailing slash redirection logic when handling paths with double slashes. This allows an attacker to redirect users to arbitrary external domains by crafting URLs such as https://mydomain.com//malicious-site.com/. This increases the risk of phishing and other social engineering attacks. This affects sites that use on-demand rendering (SSR) with the Node or Cloudf",
+            "references": [
+              "https://github.com/withastro/astro/commit/0567fb7b50c0c452be387dd7c7264b96bedab48f",
+              "https://github.com/withastro/astro/security/advisories/GHSA-cq8c-xv66-36gw"
+            ],
+            "exploit_available": false,
+            "published": "2025-08-08T01:15:24.950"
+          },
+          "description": "Astro is a web framework for content-driven websites. In versions 5.2.0 through 5.12.7, there is an Open Redirect vulnerability in the trailing slash redirection logic when handling paths with double slashes. This allows an attacker to redirect users to arbitrary external domains by crafting URLs such as https://mydomain.com//malicious-site.com/. This increases the risk of phishing and other social engineering attacks. This affects sites that use on-demand rendering (SSR) with the Node or Cloudf",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-54793.\n\u2022 Reference: https://github.com/withastro/astro/commit/0567fb7b50c0c452be387dd7c7264b96bedab48f\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192685"
+        },
+        {
+          "id": "CVE-2025-55152",
+          "title": "CVE-2025-55152 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2025-55152",
+            "cvss_score": 5.3,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "severity": "Medium",
+            "description": "oak is a middleware framework for Deno's native HTTP server, Deno Deploy, Node.js 16.5 and later, Cloudflare Workers and Bun. In versions 17.1.5 and below, it's possible to significantly slow down an oak server with specially crafted values of the x-forwarded-proto or x-forwarded-for headers.",
+            "references": [
+              "https://github.com/oakserver/oak/commit/b60e60330ef227707c4dc13ef0ea36192d894f44",
+              "https://github.com/oakserver/oak/security/advisories/GHSA-r3v7-pc4g-7xp9"
+            ],
+            "exploit_available": false,
+            "published": "2025-08-09T02:15:38.033"
+          },
+          "description": "oak is a middleware framework for Deno's native HTTP server, Deno Deploy, Node.js 16.5 and later, Cloudflare Workers and Bun. In versions 17.1.5 and below, it's possible to significantly slow down an oak server with specially crafted values of the x-forwarded-proto or x-forwarded-for headers.",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-55152.\n\u2022 Reference: https://github.com/oakserver/oak/commit/b60e60330ef227707c4dc13ef0ea36192d894f44\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192696"
+        },
+        {
+          "id": "CVE-2025-13353",
+          "title": "CVE-2025-13353 \u2014 http vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "Cloudflare http proxy",
+          "cve": {
+            "cve_id": "CVE-2025-13353",
+            "cvss_score": 5.5,
+            "cvss_vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+            "severity": "Medium",
+            "description": "In gokey versions <0.2.0,\n a flaw in the seed decryption logic resulted in passwords incorrectly \nbeing derived solely from the initial vector and the AES-GCM \nauthentication tag of the key seed.\n\n\nThis issue has been fixed in gokey version 0.2.0. This is a breaking change. The fix has invalidated any passwords/secrets that were derived from the seed file (using the -s option). Even if the input seed file stays the same, version 0.2.0 gokey will generate different secrets.\n\n\nImpact\nThis vulnerab",
+            "references": [
+              "https://github.com/cloudflare/gokey/security/advisories/GHSA-69jw-4jj8-fcxm"
+            ],
+            "exploit_available": false,
+            "published": "2025-12-02T11:15:47.437"
+          },
+          "description": "In gokey versions <0.2.0,\n a flaw in the seed decryption logic resulted in passwords incorrectly \nbeing derived solely from the initial vector and the AES-GCM \nauthentication tag of the key seed.\n\n\nThis issue has been fixed in gokey version 0.2.0. This is a breaking change. The fix has invalidated any passwords/secrets that were derived from the seed file (using the -s option). Even if the input seed file stays the same, version 0.2.0 gokey will generate different secrets.\n\n\nImpact\nThis vulnerab",
+          "evidence": "Detected http Cloudflare http proxy on 104.18.27.120:80 (tcp)",
+          "remediation": "\u2022 Update http to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-13353.\n\u2022 Reference: https://github.com/cloudflare/gokey/security/advisories/GHSA-69jw-4jj8-fcxm\n\u2022 If update is not immediately possible, consider restricting access to port 80 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.192707"
+        },
+        {
+          "id": "CVE-1999-1537",
+          "title": "CVE-1999-1537 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1537",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "IIS 3.x and 4.x does not distinguish between pages requiring encryption and those that do not, which allows remote attackers to cause a denial of service (resource exhaustion) via SSL requests to the HTTPS port for normally unencrypted files, which will cause IIS to perform extra work to send the files over SSL.",
+            "references": [
+              "http://marc.info/?l=ntbugtraq&m=93138827329577&w=2",
+              "http://www.securityfocus.com/bid/521",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/2352",
+              "http://marc.info/?l=ntbugtraq&m=93138827329577&w=2",
+              "http://www.securityfocus.com/bid/521"
+            ],
+            "exploit_available": false,
+            "published": "1999-07-07T04:00:00.000"
+          },
+          "description": "IIS 3.x and 4.x does not distinguish between pages requiring encryption and those that do not, which allows remote attackers to cause a denial of service (resource exhaustion) via SSL requests to the HTTPS port for normally unencrypted files, which will cause IIS to perform extra work to send the files over SSL.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1537.\n\u2022 Reference: http://marc.info/?l=ntbugtraq&m=93138827329577&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935326"
+        },
+        {
+          "id": "CVE-2000-0539",
+          "title": "CVE-2000-0539 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0539",
+            "cvss_score": 6.4,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:N",
+            "severity": "Medium",
+            "description": "Servlet examples in Allaire JRun 2.3.x allow remote attackers to obtain sensitive information, e.g. listing HttpSession ID's via the SessionServlet servlet.",
+            "references": [
+              "http://www.allaire.com/handlers/index.cfm?ID=16290&Method=Full",
+              "http://www.osvdb.org/818",
+              "http://www.securityfocus.com/bid/1386",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4774",
+              "http://www.allaire.com/handlers/index.cfm?ID=16290&Method=Full"
+            ],
+            "exploit_available": false,
+            "published": "2000-06-22T04:00:00.000"
+          },
+          "description": "Servlet examples in Allaire JRun 2.3.x allow remote attackers to obtain sensitive information, e.g. listing HttpSession ID's via the SessionServlet servlet.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0539.\n\u2022 Reference: http://www.allaire.com/handlers/index.cfm?ID=16290&Method=Full\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935361"
+        },
+        {
+          "id": "CVE-2000-0739",
+          "title": "CVE-2000-0739 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0739",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:P/A:N",
+            "severity": "Medium",
+            "description": "Directory traversal vulnerability in strong.exe program in NAI Net Tools PKI server 1.0 before HotFix 3 allows remote attackers to read arbitrary files via a .. (dot dot) attack in an HTTPS request to the enrollment server.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-07/0473.html",
+              "http://download.nai.com/products/licensed/pgp/hf3pki10.txt",
+              "http://www.osvdb.org/1489",
+              "http://www.securityfocus.com/bid/1537",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/5066"
+            ],
+            "exploit_available": false,
+            "published": "2000-10-20T04:00:00.000"
+          },
+          "description": "Directory traversal vulnerability in strong.exe program in NAI Net Tools PKI server 1.0 before HotFix 3 allows remote attackers to read arbitrary files via a .. (dot dot) attack in an HTTPS request to the enrollment server.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0739.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-07/0473.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935372"
+        },
+        {
+          "id": "CVE-2000-0740",
+          "title": "CVE-2000-0740 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0740",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "Buffer overflow in strong.exe program in NAI Net Tools PKI server 1.0 before HotFix 3 allows remote attackers to execute arbitrary commands via a long URL in the HTTPS port.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-07/0473.html",
+              "http://download.nai.com/products/licensed/pgp/hf3pki10.txt",
+              "http://www.osvdb.org/1488",
+              "http://www.securityfocus.com/bid/1536",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/5026"
+            ],
+            "exploit_available": false,
+            "published": "2000-10-20T04:00:00.000"
+          },
+          "description": "Buffer overflow in strong.exe program in NAI Net Tools PKI server 1.0 before HotFix 3 allows remote attackers to execute arbitrary commands via a long URL in the HTTPS port.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0740.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-07/0473.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935382"
+        },
+        {
+          "id": "CVE-2000-0791",
+          "title": "CVE-2000-0791 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0791",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "Trustix installs the httpsd program for Apache-SSL with world-writeable permissions, which allows local users to replace it with a Trojan horse.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0179.html",
+              "http://www.securityfocus.com/bid/1575",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-08/0179.html",
+              "http://www.securityfocus.com/bid/1575"
+            ],
+            "exploit_available": false,
+            "published": "2000-10-20T04:00:00.000"
+          },
+          "description": "Trustix installs the httpsd program for Apache-SSL with world-writeable permissions, which allows local users to replace it with a Trojan horse.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0791.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-08/0179.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935394"
+        },
+        {
+          "id": "CVE-2001-0606",
+          "title": "CVE-2001-0606 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2001-0606",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "Vulnerability in iPlanet Web Server 4.X in HP-UX 11.04 (VVOS) with VirtualVault A.04.00 allows a remote attacker to create a denial of service via the HTTPS service.",
+            "references": [
+              "http://archives.neohapsis.com/archives/hp/2001-q1/0041.html",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/6110",
+              "http://archives.neohapsis.com/archives/hp/2001-q1/0041.html",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/6110"
+            ],
+            "exploit_available": false,
+            "published": "2001-08-22T04:00:00.000"
+          },
+          "description": "Vulnerability in iPlanet Web Server 4.X in HP-UX 11.04 (VVOS) with VirtualVault A.04.00 allows a remote attacker to create a denial of service via the HTTPS service.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2001-0606.\n\u2022 Reference: http://archives.neohapsis.com/archives/hp/2001-q1/0041.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935404"
+        },
+        {
+          "id": "CVE-2001-0761",
+          "title": "CVE-2001-0761 \u2014 https vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2001-0761",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Buffer overflow in HttpSave.dll in Trend Micro InterScan WebManager 1.2 allows remote attackers to execute arbitrary code via a long value to a certain parameter.",
+            "references": [
+              "http://www.securityfocus.com/archive/1/194463",
+              "http://www.securityfocus.com/bid/2959",
+              "http://www.securityfocus.com/archive/1/194463",
+              "http://www.securityfocus.com/bid/2959"
+            ],
+            "exploit_available": false,
+            "published": "2001-10-18T04:00:00.000"
+          },
+          "description": "Buffer overflow in HttpSave.dll in Trend Micro InterScan WebManager 1.2 allows remote attackers to execute arbitrary code via a long value to a certain parameter.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2001-0761.\n\u2022 Reference: http://www.securityfocus.com/archive/1/194463\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935416"
+        },
+        {
+          "id": "CVE-2001-1574",
+          "title": "CVE-2001-1574 \u2014 https vulnerability",
+          "severity": "Critical",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2001-1574",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "Buffer overflow in (1) HttpSaveCVP.dll and (2) HttpSaveCSP.dll in Trend Micro InterScan VirusWall 3.5.1 allows remote attackers to execute arbitrary code.",
+            "references": [
+              "http://cert.uni-stuttgart.de/archive/bugtraq/2001/06/msg00408.html",
+              "http://cert.uni-stuttgart.de/archive/bugtraq/2001/06/msg00408.html"
+            ],
+            "exploit_available": false,
+            "published": "2001-12-31T05:00:00.000"
+          },
+          "description": "Buffer overflow in (1) HttpSaveCVP.dll and (2) HttpSaveCSP.dll in Trend Micro InterScan VirusWall 3.5.1 allows remote attackers to execute arbitrary code.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2001-1574.\n\u2022 Reference: http://cert.uni-stuttgart.de/archive/bugtraq/2001/06/msg00408.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935430"
+        },
+        {
+          "id": "CVE-2002-0778",
+          "title": "CVE-2002-0778 \u2014 https vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-0778",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "The default configuration of the proxy for Cisco Cache Engine and Content Engine allows remote attackers to use HTTPS to make TCP connections to allowed IP addresses while hiding the actual source IP.",
+            "references": [
+              "http://www.cisco.com/warp/public/707/transparentcache-tcp-relay-vuln-pub.shtml",
+              "http://www.iss.net/security_center/static/9082.php",
+              "http://www.securityfocus.com/bid/4751",
+              "http://www.cisco.com/warp/public/707/transparentcache-tcp-relay-vuln-pub.shtml",
+              "http://www.iss.net/security_center/static/9082.php"
+            ],
+            "exploit_available": false,
+            "published": "2002-08-12T04:00:00.000"
+          },
+          "description": "The default configuration of the proxy for Cisco Cache Engine and Content Engine allows remote attackers to use HTTPS to make TCP connections to allowed IP addresses while hiding the actual source IP.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-0778.\n\u2022 Reference: http://www.cisco.com/warp/public/707/transparentcache-tcp-relay-vuln-pub.shtml\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935440"
+        },
+        {
+          "id": "CVE-2002-0792",
+          "title": "CVE-2002-0792 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-0792",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "The web management interface for Cisco Content Service Switch (CSS) 11000 switches allows remote attackers to cause a denial of service (soft reset) via (1) an HTTPS POST request, or (2) malformed XML data.",
+            "references": [
+              "http://www.cisco.com/warp/public/707/css-http-post-pub.shtml",
+              "http://www.iss.net/security_center/static/9083.php",
+              "http://www.kb.cert.org/vuls/id/330275",
+              "http://www.kb.cert.org/vuls/id/686939",
+              "http://www.securityfocus.com/bid/4747"
+            ],
+            "exploit_available": false,
+            "published": "2002-08-12T04:00:00.000"
+          },
+          "description": "The web management interface for Cisco Content Service Switch (CSS) 11000 switches allows remote attackers to cause a denial of service (soft reset) via (1) an HTTPS POST request, or (2) malformed XML data.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-0792.\n\u2022 Reference: http://www.cisco.com/warp/public/707/css-http-post-pub.shtml\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935450"
+        },
+        {
+          "id": "CVE-2002-0908",
+          "title": "CVE-2002-0908 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-0908",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "Directory traversal vulnerability in the web server for Cisco IDS Device Manager before 3.1.2 allows remote attackers to read arbitrary files via a .. (dot dot) in the HTTPS request.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2002-05/0214.html",
+              "http://www.iss.net/security_center/static/9174.php",
+              "http://www.securityfocus.com/bid/4760",
+              "http://archives.neohapsis.com/archives/bugtraq/2002-05/0214.html",
+              "http://www.iss.net/security_center/static/9174.php"
+            ],
+            "exploit_available": false,
+            "published": "2002-10-04T04:00:00.000"
+          },
+          "description": "Directory traversal vulnerability in the web server for Cisco IDS Device Manager before 3.1.2 allows remote attackers to read arbitrary files via a .. (dot dot) in the HTTPS request.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-0908.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2002-05/0214.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935458"
+        },
+        {
+          "id": "CVE-2002-1157",
+          "title": "CVE-2002-1157 \u2014 https vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-1157",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Cross-site scripting vulnerability in the mod_ssl Apache module 2.8.9 and earlier, when UseCanonicalName is off and wildcard DNS is enabled, allows remote attackers to execute script as other web site visitors, via the server name in an HTTPS response on the SSL port, which is used in a self-referencing URL, a different vulnerability than CAN-2002-0840.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2002-10/0374.html",
+              "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000541",
+              "http://online.securityfocus.com/archive/1/296753",
+              "http://www.debian.org/security/2002/dsa-181",
+              "http://www.iss.net/security_center/static/10457.php"
+            ],
+            "exploit_available": false,
+            "published": "2002-11-04T05:00:00.000"
+          },
+          "description": "Cross-site scripting vulnerability in the mod_ssl Apache module 2.8.9 and earlier, when UseCanonicalName is off and wildcard DNS is enabled, allows remote attackers to execute script as other web site visitors, via the server name in an HTTPS response on the SSL port, which is used in a self-referencing URL, a different vulnerability than CAN-2002-0840.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-1157.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2002-10/0374.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935468"
+        },
+        {
+          "id": "CVE-2002-2096",
+          "title": "CVE-2002-2096 \u2014 https vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-2096",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Buffer overflow in Novell Remote Manager module, httpstk.nlm, in NetWare 5.1 and NetWare 6 allows remote attackers to execute arbitrary code via a long (1) username or (2) password.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2002-04/0001.html",
+              "http://archives.neohapsis.com/archives/bugtraq/2002-04/0088.html",
+              "http://support.novell.com/servlet/tidfinder/2962026",
+              "http://www.iss.net/security_center/static/8736.php",
+              "http://www.securityfocus.com/bid/4405"
+            ],
+            "exploit_available": false,
+            "published": "2002-12-31T05:00:00.000"
+          },
+          "description": "Buffer overflow in Novell Remote Manager module, httpstk.nlm, in NetWare 5.1 and NetWare 6 allows remote attackers to execute arbitrary code via a long (1) username or (2) password.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-2096.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2002-04/0001.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935477"
+        },
+        {
+          "id": "CVE-2002-2405",
+          "title": "CVE-2002-2405 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-2405",
+            "cvss_score": 4.9,
+            "cvss_vector": "AV:N/AC:M/Au:S/C:P/I:P/A:N",
+            "severity": "Medium",
+            "description": "Check Point FireWall-1 4.1 and Next Generation (NG), with UserAuth configured to proxy HTTP traffic only, allows remote attackers to pass unauthorized HTTPS, FTP and possibly other traffic through the firewall.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2002-09/0219.html",
+              "http://www.iss.net/security_center/static/10139.php",
+              "http://www.securityfocus.com/bid/5744",
+              "http://archives.neohapsis.com/archives/bugtraq/2002-09/0219.html",
+              "http://www.iss.net/security_center/static/10139.php"
+            ],
+            "exploit_available": false,
+            "published": "2002-12-31T05:00:00.000"
+          },
+          "description": "Check Point FireWall-1 4.1 and Next Generation (NG), with UserAuth configured to proxy HTTP traffic only, allows remote attackers to pass unauthorized HTTPS, FTP and possibly other traffic through the firewall.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-2405.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2002-09/0219.html\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935485"
+        },
+        {
+          "id": "CVE-2002-2414",
+          "title": "CVE-2002-2414 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2002-2414",
+            "cvss_score": 4.3,
+            "cvss_vector": "AV:N/AC:M/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "Opera 6.0.3, when using Squid 2.4 for HTTPS proxying, does not properly handle when accepting a non-global certificate authority (CA) certificate from a site and establishing a subsequent HTTPS connection, which allows remote attackers to cause a denial of service (crash).",
+            "references": [
+              "http://marc.info/?l=full-disclosure&m=103783186608438&w=2",
+              "http://www.iss.net/security_center/static/10673.php",
+              "http://www.securityfocus.com/bid/6218",
+              "http://marc.info/?l=full-disclosure&m=103783186608438&w=2",
+              "http://www.iss.net/security_center/static/10673.php"
+            ],
+            "exploit_available": false,
+            "published": "2002-12-31T05:00:00.000"
+          },
+          "description": "Opera 6.0.3, when using Squid 2.4 for HTTPS proxying, does not properly handle when accepting a non-global certificate authority (CA) certificate from a site and establishing a subsequent HTTPS connection, which allows remote attackers to cause a denial of service (crash).",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2002-2414.\n\u2022 Reference: http://marc.info/?l=full-disclosure&m=103783186608438&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935493"
+        },
+        {
+          "id": "CVE-2003-1559",
+          "title": "CVE-2003-1559 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2003-1559",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "Microsoft Internet Explorer 5.22, and other 5 through 6 SP1 versions, sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+            "references": [
+              "http://securityreason.com/securityalert/3989",
+              "http://www.gadgetopia.com/2003/12/23/OutlookWebAccessPrivacyHole.html",
+              "http://www.securityfocus.com/archive/1/348360",
+              "http://www.securityfocus.com/archive/1/348574",
+              "http://www.securityfocus.com/bid/9295"
+            ],
+            "exploit_available": false,
+            "published": "2003-12-31T05:00:00.000"
+          },
+          "description": "Microsoft Internet Explorer 5.22, and other 5 through 6 SP1 versions, sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2003-1559.\n\u2022 Reference: http://securityreason.com/securityalert/3989\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935503"
+        },
+        {
+          "id": "CVE-2003-1560",
+          "title": "CVE-2003-1560 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2003-1560",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "Netscape 4 sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+            "references": [
+              "http://securityreason.com/securityalert/4004",
+              "http://www.securityfocus.com/archive/1/348574",
+              "http://securityreason.com/securityalert/4004",
+              "http://www.securityfocus.com/archive/1/348574"
+            ],
+            "exploit_available": false,
+            "published": "2003-12-31T05:00:00.000"
+          },
+          "description": "Netscape 4 sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2003-1560.\n\u2022 Reference: http://securityreason.com/securityalert/4004\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935512"
+        },
+        {
+          "id": "CVE-2003-1561",
+          "title": "CVE-2003-1561 \u2014 https vulnerability",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2003-1561",
+            "cvss_score": 4.3,
+            "cvss_vector": "AV:N/AC:M/Au:N/C:P/I:N/A:N",
+            "severity": "Medium",
+            "description": "Opera, probably before 7.50, sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+            "references": [
+              "http://securityreason.com/securityalert/4004",
+              "http://www.securityfocus.com/archive/1/348574",
+              "http://securityreason.com/securityalert/4004",
+              "http://www.securityfocus.com/archive/1/348574"
+            ],
+            "exploit_available": false,
+            "published": "2003-12-31T05:00:00.000"
+          },
+          "description": "Opera, probably before 7.50, sends Referer headers containing https:// URLs in requests for http:// URLs, which allows remote attackers to obtain potentially sensitive information by reading Referer log data.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2003-1561.\n\u2022 Reference: http://securityreason.com/securityalert/4004\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935521"
+        },
+        {
+          "id": "CVE-2004-0700",
+          "title": "CVE-2004-0700 \u2014 https vulnerability",
+          "severity": "High",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2004-0700",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "Format string vulnerability in the mod_proxy hook functions function in ssl_engine_log.c in mod_ssl before 2.8.19 for Apache before 1.3.31 may allow remote attackers to execute arbitrary messages via format string specifiers in certain log messages for HTTPS that are handled by the ssl_log function.",
+            "references": [
+              "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000857",
+              "http://marc.info/?l=apache-modssl&m=109001100906749&w=2",
+              "http://marc.info/?l=bugtraq&m=109005001205991&w=2",
+              "http://packetstormsecurity.org/0407-advisories/modsslFormat.txt",
+              "http://virulent.siyahsapka.org/"
+            ],
+            "exploit_available": false,
+            "published": "2004-07-27T04:00:00.000"
+          },
+          "description": "Format string vulnerability in the mod_proxy hook functions function in ssl_engine_log.c in mod_ssl before 2.8.19 for Apache before 1.3.31 may allow remote attackers to execute arbitrary messages via format string specifiers in certain log messages for HTTPS that are handled by the ssl_log function.",
+          "evidence": "Detected https  on 104.18.27.120:443 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update https to the latest stable version.\n\u2022 Review vendor advisory for CVE-2004-0700.\n\u2022 Reference: http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000857\n\u2022 If update is not immediately possible, consider restricting access to port 443 via firewall rules.",
+          "timestamp": "2026-02-11T18:44:58.935531"
+        },
+        {
+          "id": "HDR-MISSING-STRICT_TRANSPORT_SECURITY",
+          "title": "Missing Security Header: Strict-Transport-Security",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Strict-Transport-Security header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'content-type': 'text/html; charset=UTF-8', 'transfer-encoding': 'chunked', 'connection': 'close', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'vary': 'Accept-Encoding', 'server': 'cloudflare', 'cf-ray': '9cc7b7b0bdd30f5f-EWR', 'content-encoding': 'gzip'}",
+          "remediation": "Add the Strict-Transport-Security header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:45:00.411748"
+        },
+        {
+          "id": "HDR-MISSING-CONTENT_SECURITY_POLICY",
+          "title": "Missing Security Header: Content-Security-Policy",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Content-Security-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'content-type': 'text/html; charset=UTF-8', 'transfer-encoding': 'chunked', 'connection': 'close', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'vary': 'Accept-Encoding', 'server': 'cloudflare', 'cf-ray': '9cc7b7b0bdd30f5f-EWR', 'content-encoding': 'gzip'}",
+          "remediation": "Add the Content-Security-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:45:00.411841"
+        },
+        {
+          "id": "HDR-MISSING-X_CONTENT_TYPE_OPTIONS",
+          "title": "Missing Security Header: X-Content-Type-Options",
+          "severity": "Low",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Content-Type-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'content-type': 'text/html; charset=UTF-8', 'transfer-encoding': 'chunked', 'connection': 'close', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'vary': 'Accept-Encoding', 'server': 'cloudflare', 'cf-ray': '9cc7b7b0bdd30f5f-EWR', 'content-encoding': 'gzip'}",
+          "remediation": "Add the X-Content-Type-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:45:00.411908"
+        },
+        {
+          "id": "HDR-MISSING-PERMISSIONS_POLICY",
+          "title": "Missing Security Header: Permissions-Policy",
+          "severity": "Low",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Permissions-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'date': 'Wed, 11 Feb 2026 23:45:01 GMT', 'content-type': 'text/html; charset=UTF-8', 'transfer-encoding': 'chunked', 'connection': 'close', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'same-origin', 'cache-control': 'private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0', 'expires': 'Thu, 01 Jan 1970 00:00:01 GMT', 'vary': 'Accept-Encoding', 'server': 'cloudflare', 'cf-ray': '9cc7b7b0bdd30f5f-EWR', 'content-encoding': 'gzip'}",
+          "remediation": "Add the Permissions-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:45:00.411968"
+        },
+        {
+          "id": "HDR-LEAK-SERVER",
+          "title": "Information Disclosure: Server",
+          "severity": "Low",
+          "host": "104.18.27.120",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The Server header reveals server technology information: cloudflare",
+          "evidence": "Server: cloudflare",
+          "remediation": "Remove or suppress the Server header to reduce information leakage.",
+          "timestamp": "2026-02-11T18:45:00.411985"
+        },
+        {
+          "id": "TLS-ERROR",
+          "title": "TLS Connection Error",
+          "severity": "Medium",
+          "host": "104.18.27.120",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": null,
+          "description": "TLS connection failed: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1032)",
+          "evidence": "[SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1032)",
+          "remediation": "Verify TLS configuration on the target server.",
+          "timestamp": "2026-02-11T18:45:01.088102"
+        }
+      ]
+    }
+  ]
+}

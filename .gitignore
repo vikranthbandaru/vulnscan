@@ -19,9 +19,6 @@ env/
 *.swp
 *.swo
 
-# Reports (generated)
-reports/
-*.pdf
 
 # OS
 .DS_Store

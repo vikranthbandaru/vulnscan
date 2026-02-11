@@ -1,0 +1,52 @@
+2026-02-11 18:00:43 | INFO     | Scan initiated — targets: ['127.0.0.1']
+2026-02-11 18:00:43 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:00:49 | INFO     | Discovery complete: 0/1 hosts up
+2026-02-11 18:00:49 | INFO     | Phase 5: Report Generation
+2026-02-11 18:00:49 | INFO     | Scan completed in 6.4 seconds
+2026-02-11 18:23:43 | INFO     | Scan initiated — targets: ['192.168.1.1']
+2026-02-11 18:23:43 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:23:43 | INFO     | Discovery complete: 1/1 hosts up
+2026-02-11 18:23:43 | INFO     | Phase 2: Port Scanning (1 hosts)
+2026-02-11 18:24:04 | INFO     | Port scan complete: 4 open ports
+2026-02-11 18:24:04 | INFO     | Phase 3: Vulnerability Mapping (1 hosts)
+2026-02-11 18:24:07 | INFO     | Vulnerability mapping complete: 16 findings
+2026-02-11 18:24:07 | INFO     | Phase 4: Web checks (1 hosts)
+2026-02-11 18:24:08 | INFO     | Web checks complete
+2026-02-11 18:24:08 | INFO     | Phase 5: Report Generation
+2026-02-11 18:24:08 | INFO     | Scan completed in 25.9 seconds
+2026-02-11 18:24:34 | INFO     | Scan initiated — targets: ['scanme.nmap.org']
+2026-02-11 18:24:34 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:24:35 | INFO     | Discovery complete: 1/1 hosts up
+2026-02-11 18:24:35 | INFO     | Phase 2: Port Scanning (1 hosts)
+2026-02-11 18:24:45 | INFO     | Port scan complete: 13 open ports
+2026-02-11 18:24:45 | INFO     | Phase 3: Vulnerability Mapping (1 hosts)
+2026-02-11 18:25:47 | INFO     | Vulnerability mapping complete: 45 findings
+2026-02-11 18:25:47 | INFO     | Phase 4: Web checks (1 hosts)
+2026-02-11 18:26:18 | INFO     | Web checks complete
+2026-02-11 18:26:18 | INFO     | Phase 5: Report Generation
+2026-02-11 18:26:18 | INFO     | Scan completed in 104.0 seconds
+2026-02-11 18:29:39 | INFO     | Scan initiated — targets: ['10.0.0.0/24']
+2026-02-11 18:29:39 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:30:03 | INFO     | Discovery complete: 0/1 hosts up
+2026-02-11 18:30:03 | INFO     | Phase 5: Report Generation
+2026-02-11 18:30:03 | INFO     | Scan completed in 24.3 seconds
+2026-02-11 18:44:26 | INFO     | Scan initiated — targets: ['192.168.1.1', 'example.com']
+2026-02-11 18:44:26 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:44:27 | INFO     | Discovery complete: 2/2 hosts up
+2026-02-11 18:44:27 | INFO     | Phase 2: Port Scanning (2 hosts)
+2026-02-11 18:44:55 | INFO     | Port scan complete: 6 open ports
+2026-02-11 18:44:55 | INFO     | Phase 3: Vulnerability Mapping (2 hosts)
+2026-02-11 18:44:58 | INFO     | Vulnerability mapping complete: 61 findings
+2026-02-11 18:44:58 | INFO     | Phase 4: Web checks (2 hosts)
+2026-02-11 18:45:01 | INFO     | Web checks complete
+2026-02-11 18:45:01 | INFO     | Phase 5: Report Generation
+2026-02-11 18:45:02 | INFO     | Scan completed in 35.5 seconds
+2026-02-11 18:45:41 | INFO     | Scan initiated — targets: ['127.0.0.1']
+2026-02-11 18:45:41 | INFO     | Phase 1: Asset Discovery
+2026-02-11 18:45:41 | INFO     | Discovery complete: 1/1 hosts up
+2026-02-11 18:45:41 | INFO     | Phase 2: Port Scanning (1 hosts)
+2026-02-11 18:45:49 | INFO     | Port scan complete: 3 open ports
+2026-02-11 18:45:49 | INFO     | Phase 3: Vulnerability Mapping (1 hosts)
+2026-02-11 18:45:51 | INFO     | Vulnerability mapping complete: 1 findings
+2026-02-11 18:45:51 | INFO     | Phase 5: Report Generation
+2026-02-11 18:45:51 | INFO     | Scan completed in 9.8 seconds

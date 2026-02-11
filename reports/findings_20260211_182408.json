@@ -1,0 +1,726 @@
+{
+  "metadata": {
+    "scanner_version": "1.0.0",
+    "scan_start": "2026-02-11T18:23:43.059404",
+    "scan_end": "",
+    "targets_requested": [
+      "192.168.1.1"
+    ],
+    "ports_scanned": "1-1024",
+    "cvss_threshold": 4.0,
+    "nmap_version": "",
+    "authorization_confirmed": true
+  },
+  "summary": {
+    "total_hosts": 1,
+    "hosts_up": 1,
+    "total_ports_open": 3,
+    "total_findings": 31,
+    "critical_count": 6,
+    "high_count": 3,
+    "medium_count": 11,
+    "low_count": 10,
+    "info_count": 1,
+    "overall_risk_score": 5.3
+  },
+  "hosts": [
+    {
+      "ip": "192.168.1.1",
+      "hostname": "",
+      "status": "up",
+      "response_time_ms": 260.0,
+      "os_guess": "",
+      "ports": [
+        {
+          "port": 53,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "domain",
+          "version": "Cloudflare public DNS",
+          "banner": "",
+          "cpe": ""
+        },
+        {
+          "port": 80,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "http",
+          "version": "1.4.59",
+          "banner": "",
+          "cpe": "cpe:/a:lighttpd:lighttpd:1.4.59"
+        },
+        {
+          "port": 443,
+          "protocol": "tcp",
+          "state": "open",
+          "service": "http",
+          "version": "1.4.59",
+          "banner": "",
+          "cpe": "cpe:/a:lighttpd:lighttpd:1.4.59"
+        },
+        {
+          "port": 1024,
+          "protocol": "tcp",
+          "state": "closed",
+          "service": "kdm",
+          "version": "",
+          "banner": "",
+          "cpe": ""
+        }
+      ],
+      "findings": [
+        {
+          "id": "CVE-2025-6087",
+          "title": "CVE-2025-6087 \u2014 domain vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 53,
+          "service": "domain",
+          "service_version": "Cloudflare public DNS",
+          "cve": {
+            "cve_id": "CVE-2025-6087",
+            "cvss_score": 9.1,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+            "severity": "Critical",
+            "description": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the @opennextjs/cloudflare package. The vulnerability stems from an unimplemented feature in the Cloudflare adapter for Open Next, which allowed unauthenticated users to proxy arbitrary remote content via the /_next/image endpoint.\n\nThis issue allowed attackers to load remote resources from arbitrary hosts under the victim site\u2019s domain for any site deployed using the Cloudflare adapter for Open Next.\u00a0\n\n\n\n\nFor example:\n\n https:",
+            "references": [
+              "https://github.com/opennextjs/opennextjs-cloudflare"
+            ],
+            "exploit_available": false,
+            "published": "2025-06-16T19:15:33.837"
+          },
+          "description": "A Server-Side Request Forgery (SSRF) vulnerability was identified in the @opennextjs/cloudflare package. The vulnerability stems from an unimplemented feature in the Cloudflare adapter for Open Next, which allowed unauthenticated users to proxy arbitrary remote content via the /_next/image endpoint.\n\nThis issue allowed attackers to load remote resources from arbitrary hosts under the victim site\u2019s domain for any site deployed using the Cloudflare adapter for Open Next.\u00a0\n\n\n\n\nFor example:\n\n https:",
+          "evidence": "Detected domain Cloudflare public DNS on 192.168.1.1:53 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update domain to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-6087.\n\u2022 Reference: https://github.com/opennextjs/opennextjs-cloudflare\n\u2022 If update is not immediately possible, consider restricting access to port 53 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:05.773197"
+        },
+        {
+          "id": "CVE-2025-54793",
+          "title": "CVE-2025-54793 \u2014 domain vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 53,
+          "service": "domain",
+          "service_version": "Cloudflare public DNS",
+          "cve": {
+            "cve_id": "CVE-2025-54793",
+            "cvss_score": 6.1,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+            "severity": "Medium",
+            "description": "Astro is a web framework for content-driven websites. In versions 5.2.0 through 5.12.7, there is an Open Redirect vulnerability in the trailing slash redirection logic when handling paths with double slashes. This allows an attacker to redirect users to arbitrary external domains by crafting URLs such as https://mydomain.com//malicious-site.com/. This increases the risk of phishing and other social engineering attacks. This affects sites that use on-demand rendering (SSR) with the Node or Cloudf",
+            "references": [
+              "https://github.com/withastro/astro/commit/0567fb7b50c0c452be387dd7c7264b96bedab48f",
+              "https://github.com/withastro/astro/security/advisories/GHSA-cq8c-xv66-36gw"
+            ],
+            "exploit_available": false,
+            "published": "2025-08-08T01:15:24.950"
+          },
+          "description": "Astro is a web framework for content-driven websites. In versions 5.2.0 through 5.12.7, there is an Open Redirect vulnerability in the trailing slash redirection logic when handling paths with double slashes. This allows an attacker to redirect users to arbitrary external domains by crafting URLs such as https://mydomain.com//malicious-site.com/. This increases the risk of phishing and other social engineering attacks. This affects sites that use on-demand rendering (SSR) with the Node or Cloudf",
+          "evidence": "Detected domain Cloudflare public DNS on 192.168.1.1:53 (tcp)",
+          "remediation": "\u2022 Update domain to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-54793.\n\u2022 Reference: https://github.com/withastro/astro/commit/0567fb7b50c0c452be387dd7c7264b96bedab48f\n\u2022 If update is not immediately possible, consider restricting access to port 53 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:05.773250"
+        },
+        {
+          "id": "CVE-2025-58179",
+          "title": "CVE-2025-58179 \u2014 domain vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 53,
+          "service": "domain",
+          "service_version": "Cloudflare public DNS",
+          "cve": {
+            "cve_id": "CVE-2025-58179",
+            "cvss_score": 7.2,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+            "severity": "High",
+            "description": "Astro is a web framework for content-driven websites. Versions 11.0.3 through 12.6.5 are vulnerable to SSRF when using Astro's Cloudflare adapter. When configured with output: 'server' while using the default imageService: 'compile', the generated image optimization endpoint doesn't check the URLs it receives, allowing content from unauthorized third-party domains to be served. a A bug in impacted versions of the @astrojs/cloudflare adapter for deployment on Cloudflare\u2019s infrastructure, allows a",
+            "references": [
+              "https://github.com/withastro/astro/commit/9ecf3598e2b29dd74614328fde3047ea90e67252",
+              "https://github.com/withastro/astro/security/advisories/GHSA-qpr4-c339-7vq8"
+            ],
+            "exploit_available": false,
+            "published": "2025-09-05T00:15:32.087"
+          },
+          "description": "Astro is a web framework for content-driven websites. Versions 11.0.3 through 12.6.5 are vulnerable to SSRF when using Astro's Cloudflare adapter. When configured with output: 'server' while using the default imageService: 'compile', the generated image optimization endpoint doesn't check the URLs it receives, allowing content from unauthorized third-party domains to be served. a A bug in impacted versions of the @astrojs/cloudflare adapter for deployment on Cloudflare\u2019s infrastructure, allows a",
+          "evidence": "Detected domain Cloudflare public DNS on 192.168.1.1:53 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update domain to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-58179.\n\u2022 Reference: https://github.com/withastro/astro/commit/9ecf3598e2b29dd74614328fde3047ea90e67252\n\u2022 If update is not immediately possible, consider restricting access to port 53 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:05.773275"
+        },
+        {
+          "id": "CVE-2025-65019",
+          "title": "CVE-2025-65019 \u2014 domain vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 53,
+          "service": "domain",
+          "service_version": "Cloudflare public DNS",
+          "cve": {
+            "cve_id": "CVE-2025-65019",
+            "cvss_score": 5.4,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+            "severity": "Medium",
+            "description": "Astro is a web framework. Prior to version 5.15.9, when using Astro's Cloudflare adapter (@astrojs/cloudflare) with output: 'server', the image optimization endpoint (/_image) contains a critical vulnerability in the isRemoteAllowed() function that unconditionally allows data: protocol URLs. This enables Cross-Site Scripting (XSS) attacks through malicious SVG payloads, bypassing domain restrictions and Content Security Policy protections. This issue has been patched in version 5.15.9.",
+            "references": [
+              "https://github.com/withastro/astro/commit/9e9c528191b6f5e06db9daf6ad26b8f68016e533",
+              "https://github.com/withastro/astro/security/advisories/GHSA-fvmw-cj7j-j39q"
+            ],
+            "exploit_available": false,
+            "published": "2025-11-19T17:15:53.063"
+          },
+          "description": "Astro is a web framework. Prior to version 5.15.9, when using Astro's Cloudflare adapter (@astrojs/cloudflare) with output: 'server', the image optimization endpoint (/_image) contains a critical vulnerability in the isRemoteAllowed() function that unconditionally allows data: protocol URLs. This enables Cross-Site Scripting (XSS) attacks through malicious SVG payloads, bypassing domain restrictions and Content Security Policy protections. This issue has been patched in version 5.15.9.",
+          "evidence": "Detected domain Cloudflare public DNS on 192.168.1.1:53 (tcp)",
+          "remediation": "\u2022 Update domain to the latest stable version.\n\u2022 Review vendor advisory for CVE-2025-65019.\n\u2022 Reference: https://github.com/withastro/astro/commit/9e9c528191b6f5e06db9daf6ad26b8f68016e533\n\u2022 If update is not immediately possible, consider restricting access to port 53 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:05.773292"
+        },
+        {
+          "id": "CVE-2000-0374",
+          "title": "CVE-2000-0374 \u2014 kdm vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0374",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "The default configuration of kdm in Caldera and Mandrake Linux, and possibly other distributions, allows XDMCP connections from any host, which allows remote attackers to obtain sensitive information or bypass additional access restrictions.",
+            "references": [
+              "ftp://ftp.calderasystems.com/pub/OpenLinux/security/CSSA-1999-021.0.txt",
+              "http://frontal2.mandriva.com/security/advisories?name=MDKSA-2002:025",
+              "http://www.securityfocus.com/bid/1446",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/4856",
+              "ftp://ftp.calderasystems.com/pub/OpenLinux/security/CSSA-1999-021.0.txt"
+            ],
+            "exploit_available": false,
+            "published": "1999-08-22T04:00:00.000"
+          },
+          "description": "The default configuration of kdm in Caldera and Mandrake Linux, and possibly other distributions, allows XDMCP connections from any host, which allows remote attackers to obtain sensitive information or bypass additional access restrictions.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0374.\n\u2022 Reference: ftp://ftp.calderasystems.com/pub/OpenLinux/security/CSSA-1999-021.0.txt\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287727"
+        },
+        {
+          "id": "CVE-1999-1347",
+          "title": "CVE-1999-1347 \u2014 kdm vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-1999-1347",
+            "cvss_score": 4.6,
+            "cvss_vector": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "Medium",
+            "description": "Xsession in Red Hat Linux 6.1 and earlier can allow local users with restricted accounts to bypass execution of the .xsession file by starting kde, gnome or anotherlevel from kdm.",
+            "references": [
+              "http://marc.info/?l=bugtraq&m=93942774609925&w=2",
+              "http://marc.info/?l=bugtraq&m=93942774609925&w=2"
+            ],
+            "exploit_available": false,
+            "published": "1999-10-07T04:00:00.000"
+          },
+          "description": "Xsession in Red Hat Linux 6.1 and earlier can allow local users with restricted accounts to bypass execution of the .xsession file by starting kde, gnome or anotherlevel from kdm.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-1999-1347.\n\u2022 Reference: http://marc.info/?l=bugtraq&m=93942774609925&w=2\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287761"
+        },
+        {
+          "id": "CVE-2000-0491",
+          "title": "CVE-2000-0491 \u2014 kdm vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0491",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "Buffer overflow in the XDMCP parsing code of GNOME gdm, KDE kdm, and wdm allows remote attackers to execute arbitrary commands or cause a denial of service via a long FORWARD_QUERY request.",
+            "references": [
+              "ftp://ftp.calderasystems.com/pub/OpenLinux/security/CSSA-2000-013.0.txt",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-05/0241.html",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-06/0025.html",
+              "http://www.novell.com/linux/security/advisories/suse_security_announce_49.html",
+              "http://www.securityfocus.com/bid/1233"
+            ],
+            "exploit_available": false,
+            "published": "2000-05-24T04:00:00.000"
+          },
+          "description": "Buffer overflow in the XDMCP parsing code of GNOME gdm, KDE kdm, and wdm allows remote attackers to execute arbitrary commands or cause a denial of service via a long FORWARD_QUERY request.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0491.\n\u2022 Reference: ftp://ftp.calderasystems.com/pub/OpenLinux/security/CSSA-2000-013.0.txt\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287773"
+        },
+        {
+          "id": "CVE-2000-0668",
+          "title": "CVE-2000-0668 \u2014 kdm vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2000-0668",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "pam_console PAM module in Linux systems allows a user to access the system console and reboot the system when a display manager such as gdm or kdm has XDMCP enabled.",
+            "references": [
+              "http://archives.neohapsis.com/archives/bugtraq/2000-07/0398.html",
+              "http://archives.neohapsis.com/archives/bugtraq/2000-07/0455.html",
+              "http://www.redhat.com/support/errata/RHSA-2000-044.html",
+              "http://www.securityfocus.com/bid/1513",
+              "https://exchange.xforce.ibmcloud.com/vulnerabilities/5001"
+            ],
+            "exploit_available": false,
+            "published": "2000-07-27T04:00:00.000"
+          },
+          "description": "pam_console PAM module in Linux systems allows a user to access the system console and reboot the system when a display manager such as gdm or kdm has XDMCP enabled.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2000-0668.\n\u2022 Reference: http://archives.neohapsis.com/archives/bugtraq/2000-07/0398.html\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287782"
+        },
+        {
+          "id": "CVE-2003-0690",
+          "title": "CVE-2003-0690 \u2014 kdm vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2003-0690",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "KDM in KDE 3.1.3 and earlier does not verify whether the pam_setcred function call succeeds, which may allow attackers to gain root privileges by triggering error conditions within PAM modules, as demonstrated in certain configurations of the MIT pam_krb5 module.",
+            "references": [
+              "http://cert.uni-stuttgart.de/archive/suse/security/2002/12/msg00101.html",
+              "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000747",
+              "http://marc.info/?l=bugtraq&m=106374551513499&w=2",
+              "http://www.debian.org/security/2003/dsa-388",
+              "http://www.debian.org/security/2004/dsa-443"
+            ],
+            "exploit_available": false,
+            "published": "2003-10-06T04:00:00.000"
+          },
+          "description": "KDM in KDE 3.1.3 and earlier does not verify whether the pam_setcred function call succeeds, which may allow attackers to gain root privileges by triggering error conditions within PAM modules, as demonstrated in certain configurations of the MIT pam_krb5 module.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2003-0690.\n\u2022 Reference: http://cert.uni-stuttgart.de/archive/suse/security/2002/12/msg00101.html\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287791"
+        },
+        {
+          "id": "CVE-2003-0692",
+          "title": "CVE-2003-0692 \u2014 kdm vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2003-0692",
+            "cvss_score": 7.5,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+            "severity": "High",
+            "description": "KDM in KDE 3.1.3 and earlier uses a weak session cookie generation algorithm that does not provide 128 bits of entropy, which allows attackers to guess session cookies via brute force methods and gain access to the user session.",
+            "references": [
+              "http://cert.uni-stuttgart.de/archive/suse/security/2002/12/msg00101.html",
+              "http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000747",
+              "http://marc.info/?l=bugtraq&m=106374551513499&w=2",
+              "http://www.debian.org/security/2003/dsa-388",
+              "http://www.kde.org/info/security/advisory-20030916-1.txt"
+            ],
+            "exploit_available": false,
+            "published": "2003-10-06T04:00:00.000"
+          },
+          "description": "KDM in KDE 3.1.3 and earlier uses a weak session cookie generation algorithm that does not provide 128 bits of entropy, which allows attackers to guess session cookies via brute force methods and gain access to the user session.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2003-0692.\n\u2022 Reference: http://cert.uni-stuttgart.de/archive/suse/security/2002/12/msg00101.html\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287802"
+        },
+        {
+          "id": "CVE-2006-3742",
+          "title": "CVE-2006-3742 \u2014 kdm vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2006-3742",
+            "cvss_score": 10.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:C/I:C/A:C",
+            "severity": "Critical",
+            "description": "The KDE PAM configuration shipped with Fedora Core 5 causes KDM passwords to be cached, which allows attackers to login without a password by attempting to log in multiple times.",
+            "references": [
+              "http://lwn.net/Alerts/197302/",
+              "http://lwn.net/Alerts/197302/"
+            ],
+            "exploit_available": false,
+            "published": "2006-09-06T20:04:00.000"
+          },
+          "description": "The KDE PAM configuration shipped with Fedora Core 5 causes KDM passwords to be cached, which allows attackers to login without a password by attempting to log in multiple times.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2006-3742.\n\u2022 Reference: http://lwn.net/Alerts/197302/\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287812"
+        },
+        {
+          "id": "CVE-2007-4569",
+          "title": "CVE-2007-4569 \u2014 kdm vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2007-4569",
+            "cvss_score": 6.8,
+            "cvss_vector": "AV:L/AC:L/Au:S/C:C/I:C/A:C",
+            "severity": "Medium",
+            "description": "backend/session.c in KDM in KDE 3.3.0 through 3.5.7, when autologin is configured and \"shutdown with password\" is enabled, allows remote attackers to bypass the password requirement and login to arbitrary accounts via unspecified vectors.",
+            "references": [
+              "http://lists.opensuse.org/opensuse-security-announce/2007-10/msg00006.html",
+              "http://secunia.com/advisories/26894",
+              "http://secunia.com/advisories/26904",
+              "http://secunia.com/advisories/26915",
+              "http://secunia.com/advisories/26929"
+            ],
+            "exploit_available": false,
+            "published": "2007-09-21T19:17:00.000"
+          },
+          "description": "backend/session.c in KDM in KDE 3.3.0 through 3.5.7, when autologin is configured and \"shutdown with password\" is enabled, allows remote attackers to bypass the password requirement and login to arbitrary accounts via unspecified vectors.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2007-4569.\n\u2022 Reference: http://lists.opensuse.org/opensuse-security-announce/2007-10/msg00006.html\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287820"
+        },
+        {
+          "id": "CVE-2010-0436",
+          "title": "CVE-2010-0436 \u2014 kdm vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2010-0436",
+            "cvss_score": 6.9,
+            "cvss_vector": "AV:L/AC:M/Au:N/C:C/I:C/A:C",
+            "severity": "Medium",
+            "description": "Race condition in backend/ctrl.c in KDM in KDE Software Compilation (SC) 2.2.0 through 4.4.2 allows local users to change the permissions of arbitrary files, and consequently gain privileges, by blocking the removal of a certain directory that contains a control socket, related to improper interaction with ksm.",
+            "references": [
+              "ftp://ftp.kde.org/pub/kde/security_patches/kdebase-workspace-4.3.5-CVE-2010-0436.diff",
+              "http://lists.fedoraproject.org/pipermail/package-announce/2010-April/039533.html",
+              "http://lists.opensuse.org/opensuse-security-announce/2010-04/msg00002.html",
+              "http://rhn.redhat.com/errata/RHSA-2010-0348.html",
+              "http://secunia.com/advisories/39419"
+            ],
+            "exploit_available": false,
+            "published": "2010-04-15T17:30:00.477"
+          },
+          "description": "Race condition in backend/ctrl.c in KDM in KDE Software Compilation (SC) 2.2.0 through 4.4.2 allows local users to change the permissions of arbitrary files, and consequently gain privileges, by blocking the removal of a certain directory that contains a control socket, related to improper interaction with ksm.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2010-0436.\n\u2022 Reference: ftp://ftp.kde.org/pub/kde/security_patches/kdebase-workspace-4.3.5-CVE-2010-0436.diff\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287829"
+        },
+        {
+          "id": "CVE-2013-4132",
+          "title": "CVE-2013-4132 \u2014 kdm vulnerability",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2013-4132",
+            "cvss_score": 5.0,
+            "cvss_vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+            "severity": "Medium",
+            "description": "KDE-Workspace 4.10.5 and earlier does not properly handle the return value of the glibc 2.17 crypt and pw_encrypt functions, which allows remote attackers to cause a denial of service (NULL pointer dereference and crash) via (1) an invalid salt or a (2) DES or (3) MD5 encrypted password, when FIPS-140 is enable, to KDM or an (4) invalid password to KCheckPass.",
+            "references": [
+              "http://lists.opensuse.org/opensuse-updates/2013-07/msg00082.html",
+              "http://lists.opensuse.org/opensuse-updates/2013-08/msg00002.html",
+              "http://seclists.org/oss-sec/2013/q3/117",
+              "http://seclists.org/oss-sec/2013/q3/120",
+              "https://git.reviewboard.kde.org/r/111261/"
+            ],
+            "exploit_available": false,
+            "published": "2013-09-16T19:14:38.520"
+          },
+          "description": "KDE-Workspace 4.10.5 and earlier does not properly handle the return value of the glibc 2.17 crypt and pw_encrypt functions, which allows remote attackers to cause a denial of service (NULL pointer dereference and crash) via (1) an invalid salt or a (2) DES or (3) MD5 encrypted password, when FIPS-140 is enable, to KDM or an (4) invalid password to KCheckPass.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2013-4132.\n\u2022 Reference: http://lists.opensuse.org/opensuse-updates/2013-07/msg00082.html\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287838"
+        },
+        {
+          "id": "CVE-2022-43758",
+          "title": "CVE-2022-43758 \u2014 kdm vulnerability",
+          "severity": "High",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2022-43758",
+            "cvss_score": 7.6,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:C/C:H/I:H/A:H",
+            "severity": "High",
+            "description": "A Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in SUSE Rancher allows code execution for user with the ability to add an untrusted Helm catalog or modifying the URL configuration used to download KDM (only admin users by default) This issue affects: SUSE Rancher Rancher versions prior to 2.5.17; Rancher versions prior to 2.6.10; Rancher versions prior to 2.7.1.",
+            "references": [
+              "https://bugzilla.suse.com/show_bug.cgi?id=1205294",
+              "https://bugzilla.suse.com/show_bug.cgi?id=1205294"
+            ],
+            "exploit_available": false,
+            "published": "2023-02-07T13:15:09.883"
+          },
+          "description": "A Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability in SUSE Rancher allows code execution for user with the ability to add an untrusted Helm catalog or modifying the URL configuration used to download KDM (only admin users by default) This issue affects: SUSE Rancher Rancher versions prior to 2.5.17; Rancher versions prior to 2.6.10; Rancher versions prior to 2.7.1.",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udfe0 HIGH: Address within 7 days.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2022-43758.\n\u2022 Reference: https://bugzilla.suse.com/show_bug.cgi?id=1205294\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287848"
+        },
+        {
+          "id": "CVE-2020-28715",
+          "title": "CVE-2020-28715 \u2014 kdm vulnerability",
+          "severity": "Critical",
+          "host": "192.168.1.1",
+          "port": 1024,
+          "service": "kdm",
+          "service_version": "",
+          "cve": {
+            "cve_id": "CVE-2020-28715",
+            "cvss_score": 9.8,
+            "cvss_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "severity": "Critical",
+            "description": "An issue was discovered in kdmserver service in LeEco LeTV X43 version V2401RCN02C080080B04121S, allows attackers to execute arbitrary code, escalate privileges, and cause a denial of service (DoS).",
+            "references": [
+              "http://leeco.com",
+              "https://www.cnvd.org.cn/flaw/show/2602948",
+              "http://leeco.com",
+              "https://www.cnvd.org.cn/flaw/show/2602948"
+            ],
+            "exploit_available": false,
+            "published": "2023-08-21T12:15:07.913"
+          },
+          "description": "An issue was discovered in kdmserver service in LeEco LeTV X43 version V2401RCN02C080080B04121S, allows attackers to execute arbitrary code, escalate privileges, and cause a denial of service (DoS).",
+          "evidence": "Detected kdm  on 192.168.1.1:1024 (tcp)",
+          "remediation": "\ud83d\udd34 CRITICAL: Immediate action required.\n\u2022 Update kdm to the latest stable version.\n\u2022 Review vendor advisory for CVE-2020-28715.\n\u2022 Reference: http://leeco.com\n\u2022 If update is not immediately possible, consider restricting access to port 1024 via firewall rules.",
+          "timestamp": "2026-02-11T18:24:07.287856"
+        },
+        {
+          "id": "HDR-MISSING-STRICT_TRANSPORT_SECURITY",
+          "title": "Missing Security Header: Strict-Transport-Security",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Strict-Transport-Security header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Strict-Transport-Security header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341362"
+        },
+        {
+          "id": "HDR-MISSING-CONTENT_SECURITY_POLICY",
+          "title": "Missing Security Header: Content-Security-Policy",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Content-Security-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Content-Security-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341395"
+        },
+        {
+          "id": "HDR-MISSING-X_FRAME_OPTIONS",
+          "title": "Missing Security Header: X-Frame-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Frame-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Frame-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341413"
+        },
+        {
+          "id": "HDR-MISSING-X_CONTENT_TYPE_OPTIONS",
+          "title": "Missing Security Header: X-Content-Type-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Content-Type-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Content-Type-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341432"
+        },
+        {
+          "id": "HDR-MISSING-REFERRER_POLICY",
+          "title": "Missing Security Header: Referrer-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Referrer-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Referrer-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341445"
+        },
+        {
+          "id": "HDR-MISSING-PERMISSIONS_POLICY",
+          "title": "Missing Security Header: Permissions-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Permissions-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:08 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Permissions-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:07.341456"
+        },
+        {
+          "id": "HDR-LEAK-SERVER",
+          "title": "Information Disclosure: Server",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 80,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The Server header reveals server technology information: lighttpd/1.4.59",
+          "evidence": "Server: lighttpd/1.4.59",
+          "remediation": "Remove or suppress the Server header to reduce information leakage.",
+          "timestamp": "2026-02-11T18:24:07.341463"
+        },
+        {
+          "id": "TLS-OK-TLSv1.3",
+          "title": "TLS Protocol: TLSv1.3",
+          "severity": "Info",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "https",
+          "service_version": "",
+          "cve": null,
+          "description": "Server uses TLSv1.3.",
+          "evidence": "Protocol: TLSv1.3",
+          "remediation": "No action required.",
+          "timestamp": "2026-02-11T18:24:08.018531"
+        },
+        {
+          "id": "HDR-MISSING-STRICT_TRANSPORT_SECURITY",
+          "title": "Missing Security Header: Strict-Transport-Security",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Strict-Transport-Security header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Strict-Transport-Security header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325677"
+        },
+        {
+          "id": "HDR-MISSING-CONTENT_SECURITY_POLICY",
+          "title": "Missing Security Header: Content-Security-Policy",
+          "severity": "Medium",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Content-Security-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Content-Security-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325727"
+        },
+        {
+          "id": "HDR-MISSING-X_FRAME_OPTIONS",
+          "title": "Missing Security Header: X-Frame-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Frame-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Frame-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325757"
+        },
+        {
+          "id": "HDR-MISSING-X_CONTENT_TYPE_OPTIONS",
+          "title": "Missing Security Header: X-Content-Type-Options",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the X-Content-Type-Options header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the X-Content-Type-Options header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325781"
+        },
+        {
+          "id": "HDR-MISSING-REFERRER_POLICY",
+          "title": "Missing Security Header: Referrer-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Referrer-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Referrer-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325803"
+        },
+        {
+          "id": "HDR-MISSING-PERMISSIONS_POLICY",
+          "title": "Missing Security Header: Permissions-Policy",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The HTTP response is missing the Permissions-Policy header, which helps protect against common web attacks.",
+          "evidence": "Response headers: {'content-type': 'text/html', 'accept-ranges': 'bytes', 'etag': '\"1921415396\"', 'last-modified': 'Mon, 30 Jun 2025 17:00:49 GMT', 'content-length': '488', 'date': 'Wed, 11 Feb 2026 23:24:09 GMT', 'server': 'lighttpd/1.4.59'}",
+          "remediation": "Add the Permissions-Policy header to server responses. Consult OWASP Secure Headers Project for recommended values.",
+          "timestamp": "2026-02-11T18:24:08.325824"
+        },
+        {
+          "id": "HDR-LEAK-SERVER",
+          "title": "Information Disclosure: Server",
+          "severity": "Low",
+          "host": "192.168.1.1",
+          "port": 443,
+          "service": "http",
+          "service_version": "",
+          "cve": null,
+          "description": "The Server header reveals server technology information: lighttpd/1.4.59",
+          "evidence": "Server: lighttpd/1.4.59",
+          "remediation": "Remove or suppress the Server header to reduce information leakage.",
+          "timestamp": "2026-02-11T18:24:08.325838"
+        }
+      ]
+    }
+  ]
+}

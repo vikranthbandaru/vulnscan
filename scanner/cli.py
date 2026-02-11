@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+import uuid
 from pathlib import Path
 
 from rich.console import Console
@@ -91,6 +92,11 @@ def build_parser() -> argparse.ArgumentParser:
         help="NVD API key for higher rate limits (optional)",
     )
     parser.add_argument(
+        "--scan-id",
+        default=None,
+        help="Optional scan identifier (for audit correlation)",
+    )
+    parser.add_argument(
         "--rate-limit",
         type=int,
         default=3,
@@ -108,6 +114,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="Enable verbose output",
     )
 
+    # Backward compatibility for older usage patterns that pass a bare
+    # UUID token after options without a flag.
+    parser.add_argument(
+        "legacy_scan_id",
+        nargs="?",
+        default=None,
+        help=argparse.SUPPRESS,
+    )
+
     return parser
 
 
@@ -119,12 +134,29 @@ def main(argv: list[str] | None = None) -> None:
     # Authorization gate
     if not args.confirm_authorized:
         console.print(
-            "[bold red]✗ Authorization required![/bold red]\n"
+            "[bold red]X Authorization required![/bold red]\n"
             "  You must pass [bold]--confirm-authorized[/bold] to acknowledge\n"
             "  that you have explicit permission to scan the target systems.\n\n"
             "  Unauthorized scanning is [bold red]illegal[/bold red] and [bold red]unethical[/bold red].",
         )
         sys.exit(1)
+
+    scan_id = args.scan_id
+    if args.legacy_scan_id:
+        if scan_id:
+            parser.error("Provide scan ID only once (use --scan-id)")
+
+        try:
+            uuid.UUID(args.legacy_scan_id)
+            scan_id = args.legacy_scan_id
+        except ValueError:
+            parser.error(
+                f"Unrecognized argument: {args.legacy_scan_id!r}. "
+                "If you intended a scan identifier, use --scan-id <UUID>."
+            )
+
+    if scan_id and args.verbose:
+        console.print(f"[dim]Using scan ID: {scan_id}[/dim]")
 
     # Handle 'top1000' shortcut
     from scanner.config import TOP_1000_PORTS
