@@ -1,0 +1,59 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "VulnScan: Help",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scanner.cli",
+            "args": ["--help"],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "VulnScan: Localhost Quick Scan",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scanner.cli",
+            "args": [
+                "-t", "127.0.0.1",
+                "--confirm-authorized",
+                "--format", "all",
+                "-o", "./reports"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "VulnScan: scanme.nmap.org",
+            "type": "debugpy",
+            "request": "launch",
+            "args": [
+                "-t", "scanme.nmap.org",
+                "--confirm-authorized",
+                "--format", "all",
+                "-o", "./reports"
+            ],
+            "module": "scanner.cli",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "VulnScan: Custom Target",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "scanner.cli",
+            "args": [
+                "-t", "${input:target}",
+                "--confirm-authorized",
+                "--format", "all",
+                "-o", "./reports"
+            ],
+            "console": "integratedTerminal"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "target",
+            "type": "promptString",
+            "description": "Enter target IP, CIDR, or domain"
+        }
+    ]
+}
